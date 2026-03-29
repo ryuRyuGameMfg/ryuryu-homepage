@@ -58,6 +58,19 @@ append_thread() {
   jq ".thread += [{\"role\": \"$role\", \"text\": $(echo "$text" | jq -Rs .), \"ts\": \"$ts\"}]" "$CONV_FILE" > "$tmp" 2>/dev/null && mv "$tmp" "$CONV_FILE" || rm -f "$tmp"
 }
 
+# ---- サイト変更を GitHub に push ----
+git_push_site() {
+  local msg="${1:-Telegram経由でサイトを更新}"
+  cd "$WORK_DIR" || return 1
+  if [[ -z "$(git status --porcelain 2>/dev/null)" ]]; then
+    return 0  # 変更なし
+  fi
+  git add -A
+  git commit -m "$msg" 2>>"$LOG_FILE" || return 1
+  git push 2>>"$LOG_FILE" || return 1
+  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] git push 完了: $msg" >> "$LOG_FILE"
+}
+
 # ---- 対象ファイル候補を特定（homepage-engine用）----
 find_article_candidate() {
   # 1. CONV_FILE の target_article
@@ -169,7 +182,10 @@ if [[ -z "$TELEGRAM_REPLY" ]]; then
   TELEGRAM_REPLY=$(echo "$CLAUDE_OUTPUT" | tail -5)
 fi
 
-# 6. Telegramに返信
+# 6. サイトに変更があれば GitHub に push（Netlify が自動デプロイ）
+git_push_site "Telegram: ${USER_MESSAGE:0:50}" 2>>"$LOG_FILE" || true
+
+# 7. Telegramに返信
 bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: telegram-notify.sh failed" >> "$LOG_FILE"
 
 # 7. アシスタント返信をスレッドに追加
