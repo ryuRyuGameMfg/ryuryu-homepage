@@ -14,16 +14,6 @@
 
 ---
 
-## [WARM] 連携エンジン情報（数週間スパン）
-
-| エンジン | state.json パス | 連携内容 |
-|---------|----------------|---------|
-| note-engine | ~/repository/note-engine/state.json | 新記事 → news.csv 追加 |
-| zenn-engine | ~/repository/zenn-engine/state.json | 新記事 → news.csv 追加 |
-| strategy-room | ~/repository/strategy-room/DAILY.md | KPI数値 → sections.csv 更新 |
-
----
-
 ## [WARM] CSV ファイルマップ
 
 | ファイル | パス | 更新モード |

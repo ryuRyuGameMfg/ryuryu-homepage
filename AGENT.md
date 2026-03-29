@@ -12,16 +12,12 @@
 
 ## update モード アルゴリズム
 
-1. ~/repository/note-engine/state.json を読む
-   - history の中で前回 update 以降の新記事を抽出
-   - 新記事があれば news.csv に追記（title/date/url/description）
-2. ~/repository/zenn-engine/state.json を読む
-   - 同様に新記事があれば news.csv に追記
-3. ~/repository/strategy-room/DAILY.md を読む
-   - ★売上・実績件数・ランサーズ件数 を抽出
-   - sections.csv の該当数値を更新
-4. 変更があれば ~/repository/ryuryu-homepage/ で git add data/csv/ && git commit && git push
-5. memory/daily/{DATE}.md に実行記録を保存
+1. ~/repository/ryuryu-homepage/data/csv/news.csv を読む
+   - ユーザーから指定された新規ニュースを追記（title/date/url/description）
+2. ~/repository/ryuryu-homepage/data/csv/sections.csv を読む
+   - ユーザーから指定されたKPI数値（実績件数・評価等）を更新
+3. 変更があれば ~/repository/ryuryu-homepage/ で git add data/csv/ && git commit && git push
+4. memory/daily/{DATE}.md に実行記録を保存
 
 **news.csv フォーマット確認（既存フォーマットに合わせること）**
 
@@ -37,7 +33,7 @@
 ## report モード アルゴリズム
 
 1. memory/daily/ の直近 7日分を読んでサマリー作成
-2. 週次レポートを ~/repository/strategy-room/auto-reports/homepage-daily/{DATE}.md に保存
+2. 週次レポートを ~/repository/homepage-engine/memory/reports/{DATE}.md に保存
 3. HEARTBEAT.md の各チェック項目を確認・更新
 4. MEMORY.md を見直し（100行超過なら要約して降格）
 5. state.json の iteration インクリメント（seo→report→update サイクル完了時）
