@@ -15,6 +15,9 @@ LOG_DIR="$ENGINE_DIR/logs"
 MEMORY_DIR="$ENGINE_DIR/memory"
 AUTO_REPORTS="$HOME/repository/strategy-room/auto-reports/homepage-daily"
 
+TELEGRAM_CONF="$ENGINE_DIR/.telegram.conf"
+TELEGRAM_NOTIFY="$ENGINE_DIR/scripts/telegram-notify.sh"
+
 MODE_TIMEOUT=3600        # 60分
 ERROR_RETRY_SECONDS=1800 # 30分
 MAX_CONSECUTIVE_ERRORS=3
@@ -34,6 +37,14 @@ mkdir -p "$LOG_DIR" "$MEMORY_DIR/daily" "$AUTO_REPORTS"
 
 # ── ログ ──────────────────────────────────────────────────────
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"; }
+
+# ── Telegram通知 ──────────────────────────────────────────────
+telegram_notify() {
+  local message="$1"
+  if [[ -f "$TELEGRAM_NOTIFY" && -f "$TELEGRAM_CONF" ]]; then
+    bash "$TELEGRAM_NOTIFY" "$message" || true
+  fi
+}
 
 # ── 排他制御 ──────────────────────────────────────────────────
 LOCK_FILE="/tmp/homepage_engine.lock"
@@ -236,6 +247,9 @@ if [ $EXEC_EXIT -ne 0 ]; then
   set_state consecutive_errors "$NEW_ERRORS"
   set_state status "error"
   log "連続エラー: ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}"
+  telegram_notify "❌ *homepage-engine エラー*
+モード: ${CURRENT_MODE} / Iter: ${ITERATION}
+exit code: ${EXEC_EXIT} / 連続エラー: ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}"
   if [ "$NEW_ERRORS" -lt "$MAX_CONSECUTIVE_ERRORS" ]; then
     log "クールダウン ${ERROR_RETRY_SECONDS}秒後に再試行予定"
   fi
@@ -244,6 +258,9 @@ fi
 
 log "Claude 実行完了"
 set_state consecutive_errors 0
+telegram_notify "✅ *homepage-engine ${CURRENT_MODE} 完了*
+モード: ${CURRENT_MODE} / Iter: ${ITERATION}
+$(date '+%Y-%m-%d %H:%M')"
 
 # ── Phase 4: Reviewer ─────────────────────────────────────────
 log "--- Phase 4: Reviewer ---"
