@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical Fonts - Preload these */
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Melete';
+  src: url('/fonts/Melete-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+/* HackGen Font Family - Load on demand */
+@font-face {
+  font-family: 'HackGen';
+  src: url('/fonts/HackGen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'HackGen';
+  src: url('/fonts/HackGen-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'HackGen35';
+  src: url('/fonts/HackGen35-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'HackGen35';
+  src: url('/fonts/HackGen35-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+/* Base styles with performance optimizations */
+@layer base {
+  :root {
+    --primary: 14 84% 75%;
+    --primary-foreground: 0 0% 100%;
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply text-foreground;
+    background: transparent;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    /* Prevent layout shift */
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Optimize image rendering */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 400px;
+  }
+
+  /* Prevent layout shift for lazy-loaded images */
+  img[loading="lazy"] {
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 30, 30, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #06b6d4, #2563eb);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0891b2, #1d4ed8);
+}
+
+/* Animation performance optimizations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 14)); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-268px * 7)); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  75% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 60px rgba(139, 92, 246, 0.4); }
+}
+
+@keyframes glitch {
+  0%, 100% { text-shadow: 2px 2px 0 #00ffff, -2px -2px 0 #ff00ff; }
+  25% { text-shadow: -2px 2px 0 #00ffff, 2px -2px 0 #ff00ff; }
+  50% { text-shadow: 2px -2px 0 #00ffff, -2px 2px 0 #ff00ff; }
+  75% { text-shadow: -2px -2px 0 #00ffff, 2px 2px 0 #ff00ff; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Animation classes with GPU acceleration */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+  will-change: transform;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  animation-play-state: running;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite alternate;
+  will-change: text-shadow;
+}
+
+/* キラキラエフェクト用アニメーション */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Performance optimizations for hover effects */
+.hover\:scale-105 {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.hover\:scale-110 {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* Optimize backdrop filters */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Reduce paint areas */
+.contain-paint {
+  contain: paint;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.contain-strict {
+  contain: strict;
+}

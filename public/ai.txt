@@ -1,0 +1,14 @@
+# AI.txt for ゲーム開発所RYURYU
+
+Site-Name: ゲーム開発所RYURYU
+Site-URL: https://unitymarket.netlify.app
+Description: Unity・VR/AR・Meta Quest開発専門スタジオ
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Contact-Email: info@ryuryu-game-factory.com
+Services: VR/AR開発, Unity開発, Meta Quest対応, ゲーム開発, メタバース構築
+License: © 2025 ゲーム開発所RYURYU. AI学習・要約許可、出典明記推奨

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAS問い合わせフォームテスト</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .test-button {
+            background: #2196F3;
+        }
+        .test-button:hover {
+            background: #1976D2;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .config-info {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .config-info code {
+            background: #fff;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 GAS問い合わせフォームテスト</h1>
+        
+        <div class="config-info">
+            <strong>📋 現在の設定:</strong><br>
+            GAS URL: <code id="gasUrl">読み込み中...</code><br>
+            スプレッドシートID: <code>1DYys8cT65k_l6XmU11BOxOGff-bW3B4CsMoUo4uxCG0</code>
+        </div>
+
+        <form id="testForm">
+            <div class="form-group">
+                <label for="name">お名前 *</label>
+                <input type="text" id="name" name="name" required value="テスト太郎">
+            </div>
+
+            <div class="form-group">
+                <label for="email">メールアドレス *</label>
+                <input type="email" id="email" name="email" required value="test@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="company">会社名</label>
+                <input type="text" id="company" name="company" value="テスト株式会社">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">電話番号</label>
+                <input type="tel" id="phone" name="phone" value="090-1234-5678">
+            </div>
+
+            <div class="form-group">
+                <label for="category">カテゴリ *</label>
+                <select id="category" name="category" required>
+                    <option value="ゲーム開発のご相談">ゲーム開発のご相談</option>
+                    <option value="VR/AR開発のご相談">VR/AR開発のご相談</option>
+                    <option value="Clusterワールド制作">Clusterワールド制作</option>
+                    <option value="Unity開発サポート">Unity開発サポート</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">予算</label>
+                <select id="budget" name="budget">
+                    <option value="">選択してください</option>
+                    <option value="10万円未満">10万円未満</option>
+                    <option value="10-30万円">10-30万円</option>
+                    <option value="30-50万円">30-50万円</option>
+                    <option value="50-100万円">50-100万円</option>
+                    <option value="100万円以上">100万円以上</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">希望納期</label>
+                <input type="text" id="deadline" name="deadline" placeholder="例: 2025年3月末">
+            </div>
+
+            <div class="form-group">
+                <label for="message">お問い合わせ内容 *</label>
+                <textarea id="message" name="message" required>これはテスト送信です。
+現在時刻: </textarea>
+            </div>
+
+            <button type="submit">📤 送信テスト</button>
+            <button type="button" class="test-button" onclick="testConnection()">🔌 接続テスト</button>
+            <button type="button" class="test-button" onclick="testDirectGAS()">🚀 直接GAS送信</button>
+        </form>
+
+        <div id="result" class="result"></div>
+        <div id="log" class="log" style="display: none;"></div>
+    </div>
+
+    <script>
+        // GAS URL
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbzQvH8Un3yz8u16ruWPei0VEFPgjTXPu2RWHLWGBIHGwFPzb6dUSAj9sipAK9nP36lzpQ/exec';
+        
+        // URLを表示
+        document.getElementById('gasUrl').textContent = GAS_URL.substring(0, 50) + '...';
+        
+        // 現在時刻を追加
+        document.getElementById('message').value += new Date().toLocaleString('ja-JP');
+        
+        // ログ表示
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            logDiv.style.display = 'block';
+            const time = new Date().toLocaleTimeString('ja-JP');
+            logDiv.innerHTML += `[${time}] ${type.toUpperCase()}: ${message}\n`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        // 結果表示
+        function showResult(message, type) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = 'result ' + type;
+            resultDiv.innerHTML = message;
+            resultDiv.style.display = 'block';
+        }
+        
+        // フォーム送信（APIルート経由）
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            log('フォーム送信開始（APIルート経由）');
+            
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                phone: formData.get('phone'),
+                subject: formData.get('category'), // APIはsubjectを期待
+                message: formData.get('message')
+            };
+            
+            log('送信データ: ' + JSON.stringify(data));
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                log(`レスポンスステータス: ${response.status}`);
+                const result = await response.json();
+                log('レスポンス: ' + JSON.stringify(result));
+                
+                if (response.ok) {
+                    showResult(`✅ 送信成功！<br>メッセージ: ${result.message}`, 'success');
+                } else {
+                    showResult(`❌ 送信失敗<br>エラー: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                log('エラー: ' + error.message, 'error');
+                showResult(`❌ エラーが発生しました<br>${error.message}`, 'error');
+            }
+        });
+        
+        // 接続テスト
+        async function testConnection() {
+            log('接続テスト開始');
+            showResult('🔄 接続テスト中...', 'info');
+            
+            try {
+                const response = await fetch(GAS_URL, {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                log(`GETステータス: ${response.status}`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log('GETレスポンス: ' + JSON.stringify(data));
+                    showResult(`✅ 接続成功！<br>バージョン: ${data.version}<br>メッセージ: ${data.message}`, 'success');
+                } else {
+                    showResult(`⚠️ 接続確認失敗<br>ステータス: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log('接続エラー: ' + error.message, 'error');
+                showResult(`❌ 接続エラー<br>${error.message}`, 'error');
+            }
+        }
+        
+        // 直接GAS送信
+        async function testDirectGAS() {
+            log('直接GAS送信テスト開始');
+            showResult('🔄 GASに直接送信中...', 'info');
+            
+            const formData = new FormData(document.getElementById('testForm'));
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                phone: formData.get('phone'),
+                category: formData.get('category'),
+                message: formData.get('message'),
+                budget: formData.get('budget'),
+                deadline: formData.get('deadline')
+            };
+            
+            log('送信データ: ' + JSON.stringify(data));
+            
+            try {
+                // no-corsモードで送信
+                const response = await fetch(GAS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                log('no-corsモードで送信完了（レスポンス内容は確認不可）');
+                showResult(`✅ GASへの送信完了！<br>
+                    ⚠️ no-corsモードのため、レスポンスは確認できません<br>
+                    📋 以下を確認してください：<br>
+                    1. スプレッドシートに新しい行が追加されているか<br>
+                    2. メールが送信されているか`, 'success');
+                    
+            } catch (error) {
+                log('送信エラー: ' + error.message, 'error');
+                showResult(`❌ 送信エラー<br>${error.message}`, 'error');
+            }
+        }
+        
+        // 初期接続テスト
+        window.addEventListener('load', () => {
+            log('ページ読み込み完了');
+            log(`GAS URL: ${GAS_URL}`);
+        });
+    </script>
+</body>
+</html>

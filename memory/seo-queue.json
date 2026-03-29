@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": "seo-001",
+      "title": "services.csv にターゲットキーワード追加",
+      "status": "pending",
+      "priority": "high",
+      "created": "2026-03-27"
+    },
+    {
+      "id": "seo-002",
+      "title": "hero セクションの meta description 数値を含む形に改善",
+      "status": "pending",
+      "priority": "high",
+      "created": "2026-03-27"
+    },
+    {
+      "id": "seo-003",
+      "title": "news.csv のタイトルを検索意図キーワードに寄せる",
+      "status": "pending",
+      "priority": "medium",
+      "created": "2026-03-27"
+    }
+  ]
+}

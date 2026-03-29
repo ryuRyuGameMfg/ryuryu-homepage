@@ -1,0 +1,16 @@
+id,date,category,title,description,link,isNew
+0,2025.01.15,service,バーチャルキャスト受託開発サービス開始,AIを活用したバーチャルキャストの受託開発サービスを新たに開始しました。,#services,TRUE
+1,2025.08.15,update,ホームページを作成,より使いやすく、見やすいデザインで新しいホームページを作成しました。新機能も追加されています。,,TRUE
+2,2023.12.31,achievement,年間売上530万円を達成,2023年の年間売上が530万円を達成しました。ご支援いただいた皆様に感謝申し上げます。,,FALSE
+3,2023.12.15,achievement,YouTube登録者数100人達成,YouTubeチャンネルの登録者数が100人を突破しました。今後もコンテンツの充実に努めてまいります。,,FALSE
+4,2023.08.15,achievement,ココナラ累計売上200万円達成,ココナラでの累計売上が200万円を突破いたしました。クライアント様のご信頼に感謝いたします。,,FALSE
+5,2023.03.01,company,個人事業主として正式開業,正式に開業届を提出し、個人事業主としての活動をスタートいたしました。,,FALSE
+6,2022.09.22,social,Twitterフォロワー310人達成,公式Twitterアカウントのフォロワー数が310人を突破いたしました。,,FALSE
+7,2022.03.15,service,ココナラサービス提供開始,クラウドソーシングプラットフォーム「ココナラ」でのサービス提供を開始いたしました。,#services,FALSE
+8,2022.01.01,social,note公式アカウント開設,技術情報や開発ノウハウを共有するためのnote公式アカウントを開設いたしました。,,FALSE
+9,2021.11.20,social,YouTube公式チャンネル開設,開発プロセスや技術解説を発信するYouTube公式チャンネルを開設いたしました。,,FALSE
+10,2020.04.01,personal,Unity・プログラミング学習開始,大学入学と同時にUnityとプログラミングの独学をスタートいたしました。,,FALSE
+11,2026.03.27,update,Claude CodeでUnityテストを自動生成したら開発速度が3倍になった話,Claude Codeを活用してUnityのテストコードを自動生成し、開発効率を大幅に向上させた実践レポートをnoteに公開しました。,https://note.com/ryuryu_game/,TRUE
+12,2026.03.26,update,Unity × Claude Code で自動テスト生成を実装する方法,UnityプロジェクトでのテストコードをClaude Codeで自動生成する実装ガイドをZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-26-unity-claude-code-auto-test-generation,TRUE
+13,2026.03.28,update,UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】,UniVRM 2.0を使ったVRMキャラクターのリップシンク実装方法を解説したZenn記事を公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-univrm-lipsync-implementation,TRUE
+14,2026.03.28,update,Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】,ZennリポジトリへのGitHub Actions設定でtextlintとPRプレビューを導入する方法をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-zenn-github-actions-auto-deploy,TRUE
