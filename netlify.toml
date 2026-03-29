@@ -8,6 +8,16 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[[redirects]]
+  from = "/_next/image"
+  to = "/.netlify/images"
+  status = 200
+  force = true
+  [redirects.query]
+    url = ":url"
+    w = ":w"
+    q = ":q"
+
 [[headers]]
   for = "/api/*"
   [headers.values]
