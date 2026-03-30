@@ -14,4 +14,4 @@ id,date,category,title,description,link,isNew
 12,2026.03.26,update,Unity × Claude Code で自動テスト生成を実装する方法,UnityプロジェクトでのテストコードをClaude Codeで自動生成する実装ガイドをZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-26-unity-claude-code-auto-test-generation,TRUE
 13,2026.03.28,update,UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】,UniVRM 2.0を使ったVRMキャラクターのリップシンク実装方法を解説したZenn記事を公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-univrm-lipsync-implementation,TRUE
 14,2026.03.28,update,Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】,ZennリポジトリへのGitHub Actions設定でtextlintとPRプレビューを導入する方法をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-zenn-github-actions-auto-deploy,TRUE
-15,2026.02.15,achievement,AIVTuber（AITuber）自動配信システム納品,お客様のキャラクターデータを活用した24時間YouTube自動ライブ配信システムを納品。AIが自動で会話生成・コメント返信を行い、Unityでビルドしたシステムとして提供しました。,,FALSE
+15,2026.02.15,achievement,AIVTuber（AITuber）自動配信システム納品,お客様のキャラクターデータを活用した24時間YouTube自動ライブ配信システムを納品。AIが自動で会話生成・コメント返信を行い、Unityでビルドしたシステムとして提供しました。,,TRUE
