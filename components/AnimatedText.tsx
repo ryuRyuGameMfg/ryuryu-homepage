@@ -19,7 +19,7 @@ export default function AnimatedText({
   children,
   className = '',
   delay = 0,
-  duration = 0.8,
+  duration = 0.3,
   animation = 'fadeInUp',
   typingSpeed = 0.05,
   showCursor = true

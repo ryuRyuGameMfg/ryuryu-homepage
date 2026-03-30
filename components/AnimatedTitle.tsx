@@ -47,19 +47,19 @@ export default function AnimatedTitle({
         ]
       },
       transition: {
-        duration: 0.8,
+        duration: 0.3,
         x: {
-          duration: 0.4,
+          duration: 0.2,
           repeat: isHovered ? Infinity : 0,
           repeatType: 'mirror' as const
         },
         scale: {
-          duration: 0.4,
+          duration: 0.2,
           repeat: isHovered ? Infinity : 0,
           repeatType: 'mirror' as const
         },
         textShadow: {
-          duration: 2,
+          duration: 1.5,
           repeat: Infinity,
           repeatType: 'loop' as const,
           times: [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -72,7 +72,7 @@ export default function AnimatedTitle({
       initial: { width: 0, opacity: 1 },
       animate: { width: '100%' },
       transition: {
-        duration: 2,
+        duration: 1,
         ease: 'linear' as const
       }
     },
@@ -110,10 +110,10 @@ export default function AnimatedTitle({
         scale: 1
       },
       transition: {
-        duration: 0.8,
+        duration: 0.3,
         ease: 'easeOut' as const,
         type: 'spring' as const,
-        stiffness: 100
+        stiffness: 150
       }
     },
 
@@ -133,7 +133,7 @@ export default function AnimatedTitle({
         ]
       },
       transition: {
-        duration: 2,
+        duration: 1.5,
         ease: 'easeInOut' as const,
         repeat: Infinity
       }
@@ -152,7 +152,7 @@ export default function AnimatedTitle({
         opacity: 1
       },
       transition: {
-        duration: 0.8,
+        duration: 0.3,
         ease: [0.6, 0.01, -0.05, 0.95] as const
       }
     },
