@@ -149,7 +149,7 @@ export default function ServicesSection() {
           }
         })
       },
-      { threshold: 0.2, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px 100px 0px' }
     )
 
     cardRefs.current.forEach((element) => {
@@ -213,12 +213,12 @@ export default function ServicesSection() {
                   data-card-id={service.id}
                   className="group cursor-pointer"
                   style={{
-                    transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                    transitionDelay: `${index * 150}ms`,
+                    transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    transitionDelay: `${index * 50}ms`,
                     opacity: isCardVisible ? 1 : 0,
                     transform: isCardVisible
                       ? 'translateY(0) scale(1) rotateX(0deg)'
-                      : `translateY(60px) scale(0.9) rotateX(10deg)`,
+                      : `translateY(30px) scale(0.95) rotateX(5deg)`,
                     transformOrigin: 'center bottom'
                   }}
                   onClick={() => openModal(service)}

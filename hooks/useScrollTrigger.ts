@@ -23,18 +23,18 @@ interface ScrollTriggerOptions {
 }
 
 const defaultOptions: ScrollTriggerOptions = {
-  start: 'top 80%',
+  start: 'top 95%',
   end: 'bottom 20%',
   scrub: true,
   markers: false,
   once: false,
   animation: 'fadeUp',
-  duration: 1,
+  duration: 0.4,
   delay: 0,
   ease: 'power2.out',
-  y: 50,
-  x: 50,
-  scale: 0.95,
+  y: 30,
+  x: 30,
+  scale: 0.98,
   opacity: 0,
 }
 

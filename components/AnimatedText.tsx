@@ -84,7 +84,7 @@ export default function AnimatedText({
         className={`inline-flex ${className}`}
         initial="hidden"
         animate="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.05, margin: "100px" }}
       >
         {characters.map((char, index) => (
           <motion.span
@@ -127,7 +127,7 @@ export default function AnimatedText({
       animate={selectedAnimation.animate}
       transition={selectedAnimation.transition}
       whileInView={selectedAnimation.animate}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.05, margin: "100px" }}
     >
       {children}
     </motion.div>

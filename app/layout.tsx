@@ -225,6 +225,11 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/Melete-Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Melete-Medium.otf" as="font" type="font/otf" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Melete-Bold.otf" as="font" type="font/otf" crossOrigin="anonymous" />
+
+        {/* Preload critical images */}
+        <link rel="preload" href="/services/game-development.png" as="image" />
+        <link rel="preload" href="/services/cluster-world.png" as="image" />
+        <link rel="preload" href="/services/chat-support-30day.png" as="image" />
         
         {/* Preconnect to speed up font loading */}
         <link rel="preconnect" href="/" />
