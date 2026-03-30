@@ -199,10 +199,10 @@ export default function ServicesSection() {
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
             </div>
           ) : (
-          <div className="max-w-7xl mx-auto">
-            {/* メインサービス - VR/AR開発とゲーム開発 */}
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {services.filter(s => s.id === 'vr-ar' || s.id === 'game-dev').map((service, index) => {
+          <div className="max-w-5xl mx-auto">
+            {/* 4サービス統一2×2グリッド */}
+            <div className="grid grid-cols-2 gap-4 md:gap-5">
+              {services.map((service, index) => {
                 const isCardVisible = visibleCards.has(service.id)
                 return (
                 <div
@@ -211,131 +211,10 @@ export default function ServicesSection() {
                     if (el) cardRefs.current.set(service.id, el)
                   }}
                   data-card-id={service.id}
-                  className={`group cursor-pointer ${service.id !== 'vr-ar' ? 'scale-90' : ''}`}
+                  className="group cursor-pointer"
                   style={{
                     transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                    transitionDelay: `${index * 200}ms`,
-                    opacity: isCardVisible ? 1 : 0,
-                    transform: isCardVisible
-                      ? 'translateY(0) scale(1) rotateX(0deg)'
-                      : `translateY(80px) scale(0.85) rotateX(15deg)`,
-                    transformOrigin: 'center bottom'
-                  }}
-                  onClick={() => openModal(service)}
-                >
-                  <div className={`relative h-full bg-gray-800/50 backdrop-blur-sm rounded-2xl border ${
-                    service.id === 'vr-ar' 
-                      ? 'border-blue-500/70 hover:border-blue-400 shadow-[0_0_50px_-5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_70px_-5px_rgba(59,130,246,0.7)]' 
-                      : 'border-gray-700 hover:border-cyan-500/50 hover:shadow-[0_10px_40px_-15px_rgba(6,182,212,0.3)]'
-                  } overflow-hidden transition-all duration-300 hover:-translate-y-1`}>
-                    {/* キラキラ粒子エフェクト - VR/ARカードのみ */}
-                    {service.id === 'vr-ar' && (
-                      <div className="absolute inset-0 pointer-events-none z-30">
-                        {/* 上辺 */}
-                        <div className="absolute top-[3px] left-[20%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite]"></div>
-                        <div className="absolute top-[3px] right-[30%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_0.5s]"></div>
-                        <div className="absolute top-[3px] left-[50%] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.7)] animate-[twinkle_2s_ease-in-out_infinite_1.3s]"></div>
-                        
-                        {/* 右辺 */}
-                        <div className="absolute top-[30%] right-[3px] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_1s]"></div>
-                        <div className="absolute bottom-[40%] right-[3px] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.7)] animate-[twinkle_2s_ease-in-out_infinite_0.7s]"></div>
-                        
-                        {/* 下辺 */}
-                        <div className="absolute bottom-[3px] right-[25%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_1.5s]"></div>
-                        <div className="absolute bottom-[3px] left-[40%] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.7)] animate-[twinkle_2s_ease-in-out_infinite_0.3s]"></div>
-                        <div className="absolute bottom-[3px] left-[15%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_1.8s]"></div>
-                        
-                        {/* 左辺 */}
-                        <div className="absolute top-[20%] left-[3px] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.7)] animate-[twinkle_2s_ease-in-out_infinite_0.9s]"></div>
-                        <div className="absolute bottom-[35%] left-[3px] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_1.2s]"></div>
-                      </div>
-                    )}
-                    
-                    {/* アクセントライン */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r z-10" style={{ 
-                      background: `linear-gradient(90deg, ${service.color} 0%, transparent 100%)` 
-                    }} />
-                    
-                    {/* 専門分野バッジ - VR/ARカードのみ */}
-                    {service.id === 'vr-ar' && (
-                      <div className="absolute top-4 right-4 z-20">
-                        <div className="relative">
-                          {/* 光るエフェクト */}
-                          <div className="absolute inset-0 bg-blue-500 blur-xl opacity-60 animate-pulse"></div>
-                          <div className="relative bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
-                            <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
-                            <span className="relative z-10">人気No.1</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* サムネイル画像 - アスペクト比固定 */}
-                    <div className="group/img relative w-full aspect-[2983/2481] rounded-t-xl overflow-hidden bg-gray-900/30 z-10">
-                      <Image
-                        src={service.image}
-                        alt={`${service.title} - ${service.description}`}
-                        fill
-                        className="object-contain transition-transform duration-300 group-hover/img:scale-105"
-                        sizes="(max-width: 768px) 100vw, 600px"
-                        loading="lazy"
-                        quality={75}
-                      />
-                    </div>
-                    
-                    <div className="relative p-4 md:p-5 z-10">
-                      {/* タイトルと説明 */}
-                      <div className="mb-4">
-                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-['HackGen35']">
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                          {service.description}
-                        </p>
-                      </div>
-                      
-                      {/* 価格と詳細ボタン */}
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                        <div className="flex items-baseline gap-3">
-                          <p className="text-2xl md:text-3xl font-bold" style={{ color: service.color }}>
-                            {service.price}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            {service.duration}
-                          </p>
-                        </div>
-                        <button className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                          service.id === 'vr-ar'
-                            ? 'text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-lg hover:shadow-xl'
-                            : 'text-gray-300 hover:text-white bg-gray-700/50 hover:bg-gray-700'
-                        }`}>
-                          <span>詳細を見る</span>
-                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )})}
-            </div>
-
-            {/* サブサービス - 2つの小さいカード */}
-            <div className="grid md:grid-cols-2 gap-4">
-              {services.filter(s => s.id === 'cluster' || s.id === 'support').map((service, index) => {
-                const isCardVisible = visibleCards.has(service.id)
-                return (
-                <div
-                  key={service.id}
-                  ref={(el) => {
-                    if (el) cardRefs.current.set(service.id, el)
-                  }}
-                  data-card-id={service.id}
-                  className="group cursor-pointer scale-90"
-                  style={{
-                    transition: 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                    transitionDelay: `${(index + 2) * 200}ms`,
+                    transitionDelay: `${index * 150}ms`,
                     opacity: isCardVisible ? 1 : 0,
                     transform: isCardVisible
                       ? 'translateY(0) scale(1) rotateX(0deg)'
@@ -344,57 +223,79 @@ export default function ServicesSection() {
                   }}
                   onClick={() => openModal(service)}
                 >
-                  <div className="relative h-full bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-gray-600 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <div className={`relative h-full bg-gray-800/50 backdrop-blur-sm rounded-xl border ${
+                    service.id === 'vr-ar'
+                      ? 'border-blue-500/70 hover:border-blue-400 shadow-[0_0_30px_-5px_rgba(59,130,246,0.4)] hover:shadow-[0_0_50px_-5px_rgba(59,130,246,0.6)]'
+                      : 'border-gray-700/60 hover:border-gray-600 hover:shadow-[0_8px_30px_-10px_rgba(6,182,212,0.2)]'
+                  } overflow-hidden transition-all duration-300 hover:-translate-y-1`}>
+                    {/* キラキラ粒子エフェクト - VR/ARカードのみ */}
+                    {service.id === 'vr-ar' && (
+                      <div className="absolute inset-0 pointer-events-none z-30">
+                        <div className="absolute top-[3px] left-[20%] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite]"></div>
+                        <div className="absolute top-[3px] right-[30%] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_0.5s]"></div>
+                        <div className="absolute top-[30%] right-[3px] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_1s]"></div>
+                        <div className="absolute bottom-[3px] right-[25%] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.8)] animate-[twinkle_2s_ease-in-out_infinite_1.5s]"></div>
+                        <div className="absolute bottom-[3px] left-[40%] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.7)] animate-[twinkle_2s_ease-in-out_infinite_0.3s]"></div>
+                        <div className="absolute top-[20%] left-[3px] w-1 h-1 bg-white rounded-full shadow-[0_0_6px_rgba(255,255,255,0.7)] animate-[twinkle_2s_ease-in-out_infinite_0.9s]"></div>
+                      </div>
+                    )}
+
                     {/* アクセントライン */}
-                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r" style={{ 
-                      background: `linear-gradient(90deg, ${service.color} 0%, transparent 100%)` 
+                    <div className="absolute top-0 left-0 right-0 h-0.5 z-10" style={{
+                      background: `linear-gradient(90deg, ${service.color} 0%, transparent 100%)`
                     }} />
-                    
-                    {/* サムネイル画像 - アスペクト比固定 */}
-                    <div className="group/img relative w-full aspect-[2983/2481] overflow-hidden bg-gray-900/30 p-2">
+
+                    {/* 人気No.1バッジ - VR/ARカードのみ */}
+                    {service.id === 'vr-ar' && (
+                      <div className="absolute top-2 right-2 z-20">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-blue-500 blur-lg opacity-50 animate-pulse"></div>
+                          <div className="relative bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                            <Star className="w-3 h-3 text-yellow-300 fill-yellow-300" />
+                            <span className="relative z-10">人気No.1</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* サムネイル画像 */}
+                    <div className="group/img relative w-full aspect-[2983/2481] overflow-hidden bg-gray-900/30 z-10">
                       <Image
                         src={service.image}
                         alt={`${service.title} - ${service.description}`}
                         fill
                         className="object-contain transition-transform duration-300 group-hover/img:scale-105"
-                        sizes="(max-width: 768px) 100vw, 400px"
+                        sizes="(max-width: 768px) 50vw, 400px"
                         loading="lazy"
                         quality={75}
                       />
                     </div>
-                    
-                    <div className="p-4">
-                      {/* アイコンとタイトル */}
-                      <div className="flex items-start gap-3 mb-3">
-                        <span className="text-2xl" style={{ color: service.color }}>
-                          {service.icon === 'vr' && <Glasses className="w-6 h-6" />}
-                          {service.icon === 'game' && <Gamepad2 className="w-6 h-6" />}
-                          {service.icon === 'globe' && <Globe className="w-6 h-6" />}
-                          {service.icon === 'chat' && <MessageCircle className="w-6 h-6" />}
-                        </span>
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-white mb-1 font-['HackGen35']">
-                            {service.title}
-                          </h3>
-                          <p className="text-gray-400 text-sm leading-relaxed">
-                            {service.description}
-                          </p>
-                        </div>
-                      </div>
-                      
+
+                    <div className="relative p-3 md:p-4 z-10">
+                      <h3 className="text-sm md:text-base font-bold text-white mb-1 font-['HackGen35'] leading-snug">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-400 text-xs leading-relaxed mb-3 line-clamp-2">
+                        {service.description}
+                      </p>
+
                       {/* 価格と詳細ボタン */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-baseline gap-2">
-                          <p className="text-xl font-bold" style={{ color: service.color }}>
+                      <div className="flex items-center justify-between pt-2 border-t border-gray-700/60">
+                        <div className="flex items-baseline gap-1.5">
+                          <p className="text-base md:text-lg font-bold" style={{ color: service.color }}>
                             {service.price}
                           </p>
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs text-gray-500 hidden md:block">
                             {service.duration}
                           </p>
                         </div>
-                        <button className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-gray-300 hover:text-white bg-gray-700/50 hover:bg-gray-700 rounded-lg transition-all duration-300">
-                          <span>詳細を見る</span>
-                          <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 ${
+                          service.id === 'vr-ar'
+                            ? 'text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700'
+                            : 'text-gray-300 hover:text-white bg-gray-700/50 hover:bg-gray-700'
+                        }`}>
+                          <span>詳細</span>
+                          <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
                         </button>
