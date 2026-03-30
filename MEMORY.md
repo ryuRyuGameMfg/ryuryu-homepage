@@ -11,6 +11,7 @@
 - エンジンリポジトリ: ~/repository/homepage-engine/
 - ホームページリポジトリ: ~/repository/ryuryu-homepage/
 - update / seo / report の3モードサイクルで運用中
+- **本番URL: https://ryuryugame.netlify.app/**（Netlify ホスティング）
 
 ---
 
