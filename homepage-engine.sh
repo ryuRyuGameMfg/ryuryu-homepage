@@ -247,9 +247,13 @@ if [ $EXEC_EXIT -ne 0 ]; then
   set_state consecutive_errors "$NEW_ERRORS"
   set_state status "error"
   log "連続エラー: ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}"
-  telegram_notify "❌ *homepage-engine エラー*
-モード: ${CURRENT_MODE} / Iter: ${ITERATION}
-exit code: ${EXEC_EXIT} / 連続エラー: ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}"
+  telegram_notify "homepage-engine エラー発生
+
+<b>作業内容:</b> ${CURRENT_MODE}
+<b>サイクル:</b> 第${ITERATION}回
+<b>連続エラー:</b> ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}回目
+
+ご確認をお願いします。"
   if [ "$NEW_ERRORS" -lt "$MAX_CONSECUTIVE_ERRORS" ]; then
     log "クールダウン ${ERROR_RETRY_SECONDS}秒後に再試行予定"
   fi
@@ -258,9 +262,10 @@ fi
 
 log "Claude 実行完了"
 set_state consecutive_errors 0
-telegram_notify "✅ *homepage-engine ${CURRENT_MODE} 完了*
-モード: ${CURRENT_MODE} / Iter: ${ITERATION}
-$(date '+%Y-%m-%d %H:%M')"
+telegram_notify "homepage-engine 作業完了
+
+<b>${CURRENT_MODE}</b> が完了しました
+第${ITERATION}サイクル・$(date '+%Y-%m-%d %H:%M')"
 
 # ── Phase 4: Reviewer ─────────────────────────────────────────
 log "--- Phase 4: Reviewer ---"
