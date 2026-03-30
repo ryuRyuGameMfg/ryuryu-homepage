@@ -5,7 +5,7 @@
 WORK_DIR="$HOME/repository/homepage-engine"
 TELEGRAM_CONF="$WORK_DIR/.telegram.conf"
 OFFSET_FILE="$WORK_DIR/.telegram-offset"
-INPUT_FILE="$WORK_DIR/input.md"
+INPUT_FILE="$WORK_DIR/INPUT.md"
 PID_FILE="$WORK_DIR/.telegram-daemon.pid"
 LOG_DIR="$WORK_DIR/logs"
 
@@ -119,7 +119,7 @@ print(json.dumps(output, ensure_ascii=False))
 
   # メッセージがある場合は処理
   if [[ -n "$MESSAGES_JSON" ]]; then
-    # input.md への追記
+    # INPUT.md への追記
     TIMESTAMP=$(date '+%H:%M')
     LINES_TO_PREPEND=""
     while IFS= read -r MSG_LINE; do
@@ -143,6 +143,7 @@ print(json.dumps(output, ensure_ascii=False))
       LAST_MESSAGE=$(echo "$MESSAGES_JSON" | tail -1)
       if [[ -n "$LAST_MESSAGE" ]]; then
         log "Launching telegram-react.sh"
+        bash "$WORK_DIR/scripts/telegram-notify.sh" "思考中..." || true
         /bin/bash "$REACT_SCRIPT" "$LAST_MESSAGE" &
       fi
     fi
