@@ -266,7 +266,7 @@ export default function ServicesSection() {
                         fill
                         className="object-contain transition-transform duration-300 group-hover/img:scale-105"
                         sizes="(max-width: 768px) 50vw, 400px"
-                        loading="lazy"
+                        loading="eager"
                         quality={75}
                       />
                     </div>
