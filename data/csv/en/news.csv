@@ -1,8 +1,8 @@
 id,date,category,title,description,link,isNew
-0,2025.08.31,service,Guide Cast Development Service Launched,We have launched a new commissioned development service for guide casts utilizing AI.,#services,TRUE
-1,2023.12.31,achievement,Annual Sales of 5.3 Million Yen Achieved,We achieved annual sales of 5.3 million yen in 2023. We thank everyone for their support.,,FALSE
-2,2023.10.30,achievement,Monthly Sales of 800000 Yen Achieved,We achieved monthly sales of 800000 yen in October. Thank you for your support in our business growth.,,FALSE
-3,2023.08.15,achievement,2 Million Yen Total Sales on Coconala,Our total sales on Coconala have exceeded 2 million yen. We appreciate our clients trust.,,FALSE
-4,2022.06.01,service,Officially Started as Sole Proprietor,We officially submitted our business registration and started activities as a sole proprietor.,,FALSE
-5,2022.03.15,service,Started Coconala Service,We have started providing services on the crowdsourcing platform Coconala.,#services,FALSE
-6,2026.02.15,achievement,AI VTuber (AITuber) Auto-Streaming System Delivered,We delivered a 24-hour YouTube auto-streaming system utilizing customer character data. The system features AI-powered conversation generation and comment responses built with Unity.,,TRUE
+0,2026.02.15,achievement,AI VTuber (AITuber) Auto-Streaming System Delivered,We delivered a 24-hour YouTube auto-streaming system utilizing customer character data. The system features AI-powered conversation generation and comment responses built with Unity.,,TRUE
+1,2025.08.31,service,Guide Cast Development Service Launched,We have launched a new commissioned development service for guide casts utilizing AI.,#services,TRUE
+2,2023.12.31,achievement,Annual Sales of 5.3 Million Yen Achieved,We achieved annual sales of 5.3 million yen in 2023. We thank everyone for their support.,,FALSE
+3,2023.10.30,achievement,Monthly Sales of 800000 Yen Achieved,We achieved monthly sales of 800000 yen in October. Thank you for your support in our business growth.,,FALSE
+4,2023.08.15,achievement,2 Million Yen Total Sales on Coconala,Our total sales on Coconala have exceeded 2 million yen. We appreciate our clients trust.,,FALSE
+5,2022.06.01,service,Officially Started as Sole Proprietor,We officially submitted our business registration and started activities as a sole proprietor.,,FALSE
+6,2022.03.15,service,Started Coconala Service,We have started providing services on the crowdsourcing platform Coconala.,#services,FALSE
