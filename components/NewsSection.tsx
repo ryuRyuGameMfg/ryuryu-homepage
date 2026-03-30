@@ -15,7 +15,6 @@ interface NewsItem {
 }
 
 export default function NewsSection() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [newsItems, setNewsItems] = useState<NewsItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [showAll, setShowAll] = useState(false)
@@ -64,11 +63,7 @@ export default function NewsSection() {
     }
   }
 
-  const filteredNews = selectedCategory === 'all'
-    ? newsItems
-    : newsItems.filter(item => item.category === selectedCategory)
-
-  const displayedNews = showAll ? filteredNews : filteredNews.slice(0, 3)
+  const displayedNews = showAll ? newsItems : newsItems.slice(0, 3)
 
   return (
     <section id="news" className="py-20 relative overflow-hidden">
@@ -92,30 +87,6 @@ export default function NewsSection() {
             </p>
           </div>
 
-          {/* Category Filter - Glass Style */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {categories.map((cat) => (
-              <motion.button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`relative px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === cat.id
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                <span className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                  selectedCategory === cat.id
-                    ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md border border-cyan-500/50 shadow-[0_0_20px_rgba(6,182,212,0.3)]'
-                    : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20'
-                }`} />
-                <span className="relative z-10 font-['HackGen'] text-sm">{cat.label}</span>
-              </motion.button>
-            ))}
-          </div>
-
           {/* News List - Glass Cards */}
           {isLoading ? (
             <div className="flex justify-center items-center py-20">
@@ -133,8 +104,8 @@ export default function NewsSection() {
                     key={item.id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.05, margin: "100px" }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    viewport={{ once: true, amount: 0.05, margin: "0px" }}
+                    transition={{ duration: 0.2, delay: index * 0.02 }}
                     className="relative group rounded-2xl cursor-pointer"
                   >
                     {/* Glass Card Background */}
@@ -197,7 +168,7 @@ export default function NewsSection() {
           )}
 
           {/* View More/Less Button - Glass Style */}
-          {filteredNews.length > 3 && (
+          {newsItems.length > 3 && (
             <motion.div
               className="text-center mt-10"
               initial={{ opacity: 0 }}
@@ -213,7 +184,7 @@ export default function NewsSection() {
                 <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md border border-cyan-500/30 rounded-xl transition-all duration-300 group-hover:from-cyan-500/30 group-hover:to-blue-500/30" />
                 <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_20px_rgba(6,182,212,0.4)]" />
                 <span className="relative z-10 font-['HackGen35']">
-                  {showAll ? '閉じる' : `もっと見る (${filteredNews.length - 3})`}
+                  {showAll ? '閉じる' : `もっと見る (${newsItems.length - 3})`}
                 </span>
               </motion.button>
             </motion.div>

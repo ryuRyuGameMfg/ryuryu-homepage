@@ -192,7 +192,7 @@ export default function AnimatedTitle({
         className={`inline-flex ${className}`}
         initial="hidden"
         animate="visible"
-        viewport={{ once: true, amount: 0.05, margin: "100px" }}
+        viewport={{ once: true, amount: 0.05, margin: "0px" }}
       >
         {characters.map((char, index) => (
           <motion.span
@@ -255,7 +255,7 @@ export default function AnimatedTitle({
       animate={selectedAnimation.animate}
       transition={selectedAnimation.transition}
       whileInView={selectedAnimation.animate}
-      viewport={{ once: true, amount: 0.05, margin: "100px" }}
+      viewport={{ once: true, amount: 0.05, margin: "0px" }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       style={{ perspective: animation === 'flip3d' ? 1000 : undefined }}

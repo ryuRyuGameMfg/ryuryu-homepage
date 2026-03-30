@@ -173,8 +173,8 @@ export default function FAQSection() {
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.05, margin: "100px" }}
-                  transition={{ duration: 0.3, delay: index * 0.03 }}
+                  viewport={{ once: true, amount: 0.05, margin: "0px" }}
+                  transition={{ duration: 0.2, delay: index * 0.02 }}
                   className="relative group rounded-2xl"
                 >
                   {/* Glass Card Background */}
