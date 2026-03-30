@@ -45,13 +45,15 @@ export default function NewsSection() {
     fetchNews()
   }, [])
 
-  const categories = [
-    { id: 'all', label: 'すべて', color: 'gray' },
-    { id: 'update', label: 'お知らせ', color: 'blue' },
-    { id: 'service', label: 'サービス', color: 'green' },
-    { id: 'event', label: 'イベント', color: 'blue' },
-    { id: 'achievement', label: '実績', color: 'yellow' },
-  ]
+  const getCategoryLabel = (category: string) => {
+    switch(category) {
+      case 'update': return 'お知らせ'
+      case 'service': return 'サービス'
+      case 'event': return 'イベント'
+      case 'achievement': return '実績'
+      default: return 'その他'
+    }
+  }
 
   const getCategoryColor = (category: string) => {
     switch(category) {
@@ -126,7 +128,7 @@ export default function NewsSection() {
 
                           {/* Category Badge */}
                           <span className={`px-3 py-1.5 rounded-lg ${categoryStyle.bg} ${categoryStyle.text} border ${categoryStyle.border} text-xs font-medium backdrop-blur-sm`}>
-                            {categories.find(c => c.id === item.category)?.label}
+                            {getCategoryLabel(item.category)}
                           </span>
 
                           {/* NEW Badge */}
