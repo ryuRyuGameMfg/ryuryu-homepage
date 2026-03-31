@@ -10,7 +10,7 @@ NOTIFY_SCRIPT="$WORK_DIR/scripts/telegram-notify.sh"
 
 # 進捗通知モード
 if [[ "${1:-}" == "--progress" ]]; then
-  MSG="homepage担当PMです。進捗報告です。
+  MSG="進捗
 
 ${2:-}"
   bash "$NOTIFY_SCRIPT" "$MSG"
@@ -43,7 +43,7 @@ case "$STATUS" in
   *)       STATUS_LABEL="状態確認中" ;;
 esac
 
-MSG="homepage担当PMです。${DATE} ${TIME}の定期報告です。
+MSG="日次レポート ${DATE}
 
 【現在の状況】
 作業フェーズ: ${MODE_LABEL}（第${ITER}サイクル）
