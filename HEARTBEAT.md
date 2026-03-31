@@ -26,4 +26,4 @@
 - [ ] エラーが続いているモードはないか（consecutive_errors 確認）
 - [ ] AGENT.md のアルゴリズムに改善点はないか
 - [ ] MEMORY.md が 100行を超えていないか
-- [ ] memory/daily/ に今日の記録があるか
+- [ ] memory/hot/ に今日の記録があるか

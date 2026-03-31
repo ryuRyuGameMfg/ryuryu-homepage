@@ -35,7 +35,9 @@ input.md
 
 # Engine - logs & memory
 logs/
-memory/daily/
+memory/hot/
+memory/warm/
+memory/cold/
 
 # macOS
 .DS_Store

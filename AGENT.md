@@ -72,7 +72,7 @@ homepage: iter{N}_weekly_report {変更概要}
 - エラー後クールダウン: 1800秒
 - モード成功後: consecutive_errors を 0 リセット
 
-## memory/daily/ 記録フォーマット
+## memory/hot/ 記録フォーマット
 
 ```markdown
 # {YYYY-MM-DD} - Mode: {mode}

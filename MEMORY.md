@@ -1,42 +1,28 @@
-# MEMORY - 常時コンテキスト
+# MEMORY - homepage-engine
 
-**管理方針: iterate モードで昇格/降格。100行以下を維持。**
-**3層構造: hot（毎回参照）/ warm（数週間有効）/ cold（アーカイブ）**
+## メモリ構造
 
----
+| 層 | パス | ロード | 説明 |
+|----|------|--------|------|
+| HOT | memory/hot/ | 常時 | 直近20件の日次記録 |
+| WARM | memory/warm/ | 常時 | 週次サマリー |
+| COLD | memory/cold/ | 要求時 | 月次サマリー |
+| INSIGHTS | memory/insights.md | 常時 | 学習パターン |
 
-## [HOT] 直近の状態（常時参照）
+## HOT（直近コンテキスト）
+- 最新: 2026-03-31
+- 件数: 2件
 
+## 現在のフォーカス
 - 初期化済み（Iter0）、3モードサイクル稼働開始
 - エンジンリポジトリ: ~/repository/homepage-engine/
 - ホームページリポジトリ: ~/repository/ryuryu-homepage/
+- 本番URL: https://ryuryugame.netlify.app/（Netlify ホスティング）
 - update / seo / report の3モードサイクルで運用中
-- **本番URL: https://ryuryugame.netlify.app/**（Netlify ホスティング）
+- CSVファイル: news.csv / services.csv / testimonials.csv / sections.csv（data/csv/）
 
----
+## WARM サマリー
+未生成
 
-## [WARM] CSV ファイルマップ
-
-| ファイル | パス | 更新モード |
-|---------|------|-----------|
-| news.csv | data/csv/news.csv | update |
-| services.csv | data/csv/services.csv | seo |
-| testimonials.csv | data/csv/testimonials.csv | update |
-| sections.csv | data/csv/sections.csv | update |
-
----
-
-## [COLD] 更新履歴・学んだパターン
-
-（初回サイクル完了後に記録予定）
-
----
-
-## 昇格/降格ルール
-
-| 判定 | 処理 |
-|------|------|
-| 30日以上価値がある情報 | HOT/WARM に昇格 |
-| 2週間参照されない HOT 情報 | WARM に降格 |
-| 1ヶ月参照されない WARM 情報 | COLD または削除 |
-| 100行超過時 | COLD を memory/long-term/ に移動 |
+## COLD アーカイブ
+なし

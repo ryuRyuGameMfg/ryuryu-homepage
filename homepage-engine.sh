@@ -10,7 +10,7 @@ set -euo pipefail
 # ── 定数 ──────────────────────────────────────────────────────
 ENGINE_DIR="$HOME/repository/homepage-engine"
 HOMEPAGE_DIR="$HOME/repository/ryuryu-homepage"
-STATE_FILE="$ENGINE_DIR/state.json"
+STATE_FILE="$ENGINE_DIR/data/state.json"
 LOG_DIR="$ENGINE_DIR/logs"
 MEMORY_DIR="$ENGINE_DIR/memory"
 AUTO_REPORTS="$HOME/repository/strategy-room/auto-reports/homepage-daily"
@@ -44,6 +44,14 @@ telegram_notify() {
   if [[ -f "$TELEGRAM_NOTIFY" && -f "$TELEGRAM_CONF" ]]; then
     bash "$TELEGRAM_NOTIFY" "$message" || true
   fi
+}
+
+# Claude出力からサマリーを抽出
+extract_summary() {
+  local output="$1"
+  local summary=""
+  summary=$(echo "$output" | sed -n '/PHASE_SUMMARY_START/,/PHASE_SUMMARY_END/p' | sed '1d;$d')
+  echo "$summary"
 }
 
 # ── 排他制御 ──────────────────────────────────────────────────
@@ -183,10 +191,16 @@ AGENT.md の「update モード アルゴリズム」に従い、以下を実行
    ~/repository/ryuryu-homepage/data/csv/sections.csv の実績数値を更新
 5. 変更があれば ~/repository/ryuryu-homepage/ で git commit && git push
    （コミットメッセージ: homepage: iter${ITERATION}_update {変更概要}）
-6. ~/repository/homepage-engine/memory/daily/${TODAY}.md に実行記録を保存
+6. ~/repository/homepage-engine/memory/hot/${TODAY}.md に実行記録を保存
 7. ~/repository/homepage-engine/state.json の last_deployed を更新
 
 変更がなかった場合も daily memory に「変更なし」と記録してください。
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END
 "
       ;;
     seo)
@@ -205,9 +219,15 @@ AGENT.md の「seo モード アルゴリズム」に従い、以下を実行し
 5. 変更があれば ~/repository/ryuryu-homepage/ で git commit && git push
    （コミットメッセージ: homepage: iter${ITERATION}_seo {変更概要}）
 6. seo-queue.json の実施済みタスクのステータスを「done」に更新
-7. ~/repository/homepage-engine/memory/daily/${TODAY}.md に実行記録を保存
+7. ~/repository/homepage-engine/memory/hot/${TODAY}.md に実行記録を保存
 
 必ず既存の CSV フォーマットを Read で確認してから編集すること。
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END
 "
       ;;
     report)
@@ -218,15 +238,21 @@ AGENT.md の「seo モード アルゴリズム」に従い、以下を実行し
 
 AGENT.md の「report モード アルゴリズム」に従い、以下を実行してください：
 
-1. ~/repository/homepage-engine/memory/daily/ の直近 7日分を読んでサマリー作成
+1. ~/repository/homepage-engine/memory/hot/ の直近 7日分を読んでサマリー作成
 2. 週次レポートを ~/repository/strategy-room/auto-reports/homepage-daily/${TODAY//-/_}.md に保存
    （フォーマット: 現状サマリー / 更新履歴 / SEO進捗 / 次サイクルの方針）
 3. ~/repository/homepage-engine/HEARTBEAT.md の各チェック項目を実際に確認して更新
 4. ~/repository/homepage-engine/MEMORY.md を見直し
    （古い情報を降格、新しい重要情報を昇格、100行以内に維持）
-5. ~/repository/homepage-engine/memory/daily/${TODAY}.md に実行記録を保存
+5. ~/repository/homepage-engine/memory/hot/${TODAY}.md に実行記録を保存
 
 iteration のインクリメントは homepage-engine.sh が自動で行います（不要）。
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END
 "
       ;;
   esac
@@ -237,9 +263,10 @@ PROMPT=$(build_prompt "$CURRENT_MODE")
 # Claude 実行
 log "Claude 実行開始（タイムアウト: ${MODE_TIMEOUT}秒）"
 EXEC_EXIT=0
-timeout "$MODE_TIMEOUT" claude --allowedTools "$ALLOWED_TOOLS" -p "$PROMPT" \
+EXEC_OUTPUT=""
+EXEC_OUTPUT=$(timeout "$MODE_TIMEOUT" claude --allowedTools "$ALLOWED_TOOLS" -p "$PROMPT" \
   --output-format text \
-  2>>"$LOG_FILE" || EXEC_EXIT=$?
+  2>>"$LOG_FILE") || EXEC_EXIT=$?
 
 if [ $EXEC_EXIT -ne 0 ]; then
   log "Claude 実行失敗 (exit: $EXEC_EXIT)"
@@ -247,9 +274,7 @@ if [ $EXEC_EXIT -ne 0 ]; then
   set_state consecutive_errors "$NEW_ERRORS"
   set_state status "error"
   log "連続エラー: ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}"
-  telegram_notify "homepage-engine エラー発生
-
-<b>作業内容:</b> ${CURRENT_MODE}
+  telegram_notify "<b>作業内容:</b> ${CURRENT_MODE}
 <b>サイクル:</b> 第${ITERATION}回
 <b>連続エラー:</b> ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}回目
 
@@ -262,10 +287,10 @@ fi
 
 log "Claude 実行完了"
 set_state consecutive_errors 0
-telegram_notify "homepage-engine 作業完了
+_summary=$(extract_summary "$EXEC_OUTPUT")
+telegram_notify "第${ITERATION}サイクル・${CURRENT_MODE} 完了
 
-<b>${CURRENT_MODE}</b> が完了しました
-第${ITERATION}サイクル・$(date '+%Y-%m-%d %H:%M')"
+${_summary:-詳細なし}"
 
 # ── Phase 4: Reviewer ─────────────────────────────────────────
 log "--- Phase 4: Reviewer ---"
