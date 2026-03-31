@@ -4,7 +4,10 @@
 
 WORK_DIR="${WORK_DIR:-$HOME/repository/homepage-engine}"
 CONF_FILE="$WORK_DIR/.telegram.conf"
-LOG_FILE="$WORK_DIR/logs/$(date '+%Y-%m-%d')/homepage-engine.log"
+LOG_DIR="$WORK_DIR/logs/$(date '+%Y-%m-%d')"
+LOG_FILE="$LOG_DIR/homepage-engine.log"
+
+mkdir -p "$LOG_DIR"
 
 exec ~/.claude/scripts/telegram-notify-core.sh \
   "$CONF_FILE" "$LOG_FILE" "${1:-}" "${2:-}"
