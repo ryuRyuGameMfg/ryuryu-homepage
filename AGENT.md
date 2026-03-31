@@ -6,54 +6,65 @@
 
 | mode 値 | 実行内容 | 曜日 |
 |---------|---------|------|
-| "update" | コンテンツ更新（CSV）+ git push | 月曜 |
-| "seo" | SEO改善（meta/コピー）+ git push | 水曜 |
-| "report" | 週次レポート生成 + MEMORY/HEARTBEAT 更新 | 土曜 |
+| "weekly_report" | トレンド調査・SEO評価・デザイン提案・週次レポート生成 | 土曜 10:00 |
 
-## update モード アルゴリズム
+## weekly_report モード アルゴリズム
 
-1. ~/repository/ryuryu-homepage/data/csv/news.csv を読む
-   - ユーザーから指定された新規ニュースを追記（title/date/url/description）
-2. ~/repository/ryuryu-homepage/data/csv/sections.csv を読む
-   - ユーザーから指定されたKPI数値（実績件数・評価等）を更新
-3. 変更があれば ~/repository/ryuryu-homepage/ で git add data/csv/ && git commit && git push
-4. memory/daily/{DATE}.md に実行記録を保存
+**社長への提案型レポート作成（Telegram送信）**
 
-**news.csv フォーマット確認（既存フォーマットに合わせること）**
+1. **トレンド・競合調査**
+   - WebSearch で「Unity 開発 外注」「VR 開発 受託」の競合サイトを調査
+   - ゲーム開発企業サイトのデザイントレンド分析
+   - 競合5社の最新動向チェック
 
-## seo モード アルゴリズム
+2. **SEO・AEO評価**
+   - 検索順位変動確認
+   - Schema Markup状況チェック
+   - robots.txt確認（AIクローラー許可）
 
-1. WebSearch で「Unity 開発 外注」「VR 開発 受託」の競合サイトを調査
-2. seo-queue.json の未実施タスクを確認
-3. services.csv のコピーを改善（ターゲットキーワードを自然に含める）
-4. sections.csv の hero/about セクションコピーを確認・改善
-5. 変更があれば git add data/csv/ && git commit && git push
-6. seo-queue.json の実施済みタスクにマーク
+3. **デザイン提案**
+   - フォント候補3案
+   - 配色最適化案
+   - レイアウト改善案
 
-## report モード アルゴリズム
+4. **議論トピック作成**
+   - A案 vs B案形式でデザイン選択肢を提示
+   - 実装難易度・効果予測を明記
+   - 優先順位付き
 
-1. memory/daily/ の直近 7日分を読んでサマリー作成
-2. 週次レポートを ~/repository/homepage-engine/memory/reports/{DATE}.md に保存
-3. HEARTBEAT.md の各チェック項目を確認・更新
-4. MEMORY.md を見直し（100行超過なら要約して降格）
-5. state.json の iteration インクリメント（seo→report→update サイクル完了時）
+5. **週次レポート保存**
+   - ~/repository/homepage-engine/memory/reports/{DATE}.md に保存
+   - MEMORY.md を見直し（100行超過なら要約して降格）
+   - state.json の iteration インクリメント
+
+6. **Telegram送信**
+   - レポートをTelegramに送信
+   - 社長からの返信を待機
+
+**コンテンツ更新（note/Zenn記事追加、KPI数値更新）は社長からの指示待機**
 
 ## コミットメッセージ規約
 
 ```
-homepage: iter{N}_{mode} {変更概要}
+homepage: iter{N}_weekly_report {変更概要}
 ```
 
 例:
-- `homepage: iter0_update news.csv +2件, sections.csv KPI更新`
-- `homepage: iter0_seo services.csv コピー改善`
+- `homepage: iter0_weekly_report トレンド調査・デザイン提案`
+- `homepage: iter1_weekly_report 競合分析・フォント3案提案`
 
-## state.json モード遷移ルール
+## state.json モード
 
+```json
+{
+  "mode": "weekly_report",
+  "iteration": 0,
+  "status": "idle",
+  "last_run": "2026-03-31T10:00:00Z"
+}
 ```
-update → seo → report → update（ループ）
-```
-- report → update 遷移時: iteration インクリメント
+
+- weekly_report 完了時: iteration インクリメント
 
 ## エラーハンドリング
 
