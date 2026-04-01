@@ -21,6 +21,16 @@ LOG_FILE="$LOG_DIR/telegram-react.log"
 # ログディレクトリ準備
 mkdir -p "$LOG_DIR" 2>/dev/null || true
 
+# 動的メッセージ用ライブラリ
+INTERACTIVE_CORE="$HOME/.claude/scripts/telegram-interactive-core.sh"
+if [[ -f "$INTERACTIVE_CORE" ]]; then
+  source "$INTERACTIVE_CORE"
+  source "$TELEGRAM_CONF" 2>/dev/null
+  USE_DYNAMIC=true
+else
+  USE_DYNAMIC=false
+fi
+
 # claude フルパス解決
 CLAUDE_PATH="$(which claude 2>/dev/null || echo '/Users/okamotoryuya/.local/bin/claude')"
 if [[ ! -x "$CLAUDE_PATH" ]]; then
@@ -137,6 +147,46 @@ build_thread_str() {
 
 # ---- メイン ----
 
+# ---- コールバック（ボタン押下）処理 ----
+if [[ "$USER_MESSAGE" =~ ^\[CALLBACK:(.+):([0-9]+)\]$ ]]; then
+  CB_DATA="${BASH_REMATCH[1]}"
+  CB_MSG_ID="${BASH_REMATCH[2]}"
+
+  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] CALLBACK: data=${CB_DATA}, msg_id=${CB_MSG_ID}" >> "$LOG_FILE"
+
+  case "$CB_DATA" in
+    approve|approve:*)
+      if [[ "$USE_DYNAMIC" == "true" ]]; then
+        tg_remove_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$CB_MSG_ID" 2>/dev/null || true
+      fi
+      USER_MESSAGE="承認します。計画通り進めてください。"
+      append_thread "user" "[ボタン] 承認"
+      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
+      ;;
+    revise|revise:*)
+      if [[ "$USE_DYNAMIC" == "true" ]]; then
+        tg_remove_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$CB_MSG_ID" 2>/dev/null || true
+      fi
+      USER_MESSAGE="計画を見直してください。別のアプローチを提案してください。"
+      append_thread "user" "[ボタン] 計画見直し"
+      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
+      ;;
+    detail|detail:*)
+      if [[ "$USE_DYNAMIC" == "true" ]]; then
+        tg_remove_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$CB_MSG_ID" 2>/dev/null || true
+      fi
+      USER_MESSAGE="もう少し詳しく説明してください。"
+      append_thread "user" "[ボタン] 詳細希望"
+      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
+      ;;
+    *)
+      USER_MESSAGE="ボタン操作: ${CB_DATA}"
+      append_thread "user" "[ボタン] ${CB_DATA}"
+      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
+      ;;
+  esac
+fi
+
 # 1. ユーザーメッセージをスレッドに追加
 append_thread "user" "$USER_MESSAGE"
 update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
@@ -242,9 +292,16 @@ CLAUDE_OUTPUT=""
 EXEC_START=$(date '+%Y-%m-%dT%H:%M:%S')
 echo "[${EXEC_START}] START: claude execution" >> "$LOG_FILE"
 
+PROGRESS_MSG_ID=""
+if [[ "$USE_DYNAMIC" == "true" ]]; then
+  PROGRESS_MSG_ID=$(tg_send_message "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "思考中..." 2>/dev/null || echo "")
+  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] DYNAMIC: progress_msg_id=${PROGRESS_MSG_ID}" >> "$LOG_FILE"
+fi
+
 # 共通ランナーで実行（監視・サイレント経過通知・エラー検知）
 CLAUDE_TMP=$(mktemp /tmp/homepage-engine-claude-output.XXXXXX)
 export CLAUDE_PATH BOT_NAME="homepage-engine GM" LOG_FILE NOTIFY_SCRIPT ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
+export PROGRESS_MSG_ID TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID
 echo "$PROMPT" | bash ~/.claude/scripts/telegram-claude-runner.sh "$CLAUDE_TMP"
 RUNNER_EXIT=$?
 CLAUDE_OUTPUT=$(cat "$CLAUDE_TMP" 2>/dev/null || echo "")
@@ -271,7 +328,25 @@ fi
 git_push_site "Telegram: ${USER_MESSAGE:0:50}" 2>>"$LOG_FILE" || true
 
 # 7. Telegramに返信
-bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: telegram-notify.sh failed" >> "$LOG_FILE"
+if [[ "$USE_DYNAMIC" == "true" && -n "$PROGRESS_MSG_ID" ]]; then
+  HAS_PLAN=false
+  if echo "$TELEGRAM_REPLY" | grep -qiE '計画|提案|方針|プラン|アプローチ|設計|実装予定|進め方'; then
+    HAS_PLAN=true
+  fi
+
+  if [[ "$HAS_PLAN" == "true" ]]; then
+    BUTTONS='[[{"text":"承認する","callback_data":"approve"},{"text":"計画見直し","callback_data":"revise"}],[{"text":"詳しく聞く","callback_data":"detail"}]]'
+    tg_edit_message_with_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$PROGRESS_MSG_ID" "$TELEGRAM_REPLY" "$BUTTONS" 2>/dev/null || {
+      bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || true
+    }
+  else
+    tg_edit_message "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$PROGRESS_MSG_ID" "$TELEGRAM_REPLY" 2>/dev/null || {
+      bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || true
+    }
+  fi
+else
+  bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: telegram-notify.sh failed" >> "$LOG_FILE"
+fi
 
 # AI応答をhot/に記録
 HOT_DIR="$WORK_DIR/memory/hot"
