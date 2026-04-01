@@ -37,7 +37,7 @@ fi
 
 # ---- リマインダー検知（共通基盤） ----
 REMINDER_PARSE_CORE="$HOME/.claude/scripts/reminder-parse-core.sh"
-REMINDERS_FILE="$HOME/.claude/data/reminders.json"
+REMINDERS_FILE="$WORK_DIR/reminders.json"
 
 is_reminder_command() {
   local msg="$1"
@@ -144,11 +144,11 @@ update_conv_str "status" "processing"
 
 # リマインダー一覧表示
 if is_reminder_list_command "$USER_MESSAGE"; then
-  LIST_REPLY=$(python3 << 'PYEOF'
+  LIST_REPLY=$(python3 << PYEOF
 import json, os
 from datetime import datetime
 
-f = os.path.expanduser("~/.claude/data/reminders.json")
+f = "$REMINDERS_FILE"
 if not os.path.exists(f):
     print("リマインダーはありません。")
 else:
@@ -182,7 +182,7 @@ fi
 # リマインダー登録
 if is_reminder_command "$USER_MESSAGE"; then
   echo "[$(date '+%Y-%m-%dT%H:%M:%S')] REMINDER: detected reminder command" >> "$LOG_FILE"
-  PARSE_RESULT=$(bash "$REMINDER_PARSE_CORE" "$USER_MESSAGE" "$TELEGRAM_CONF" "$LOG_FILE" 2>>"$LOG_FILE")
+  PARSE_RESULT=$(bash "$REMINDER_PARSE_CORE" "$USER_MESSAGE" "$TELEGRAM_CONF" "$LOG_FILE" "$REMINDERS_FILE" 2>>"$LOG_FILE")
   PARSE_EXIT=$?
 
   if [[ $PARSE_EXIT -eq 0 ]] && echo "$PARSE_RESULT" | grep -q "^REMINDER_SET|"; then
