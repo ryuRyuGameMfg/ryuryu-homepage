@@ -274,11 +274,16 @@ if [ $EXEC_EXIT -ne 0 ]; then
   set_state consecutive_errors "$NEW_ERRORS"
   set_state status "error"
   log "連続エラー: ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}"
-  telegram_notify "<b>作業内容:</b> ${CURRENT_MODE}
-<b>サイクル:</b> 第${ITERATION}回
-<b>連続エラー:</b> ${NEW_ERRORS}/${MAX_CONSECUTIVE_ERRORS}回目
+  case "$CURRENT_MODE" in
+    update) _mode_label="コンテンツ更新" ;;
+    seo)    _mode_label="SEO最適化" ;;
+    report) _mode_label="レポート生成" ;;
+    *)      _mode_label="$CURRENT_MODE" ;;
+  esac
+  telegram_notify "<b>確認をお願いします</b>
 
-ご確認をお願いします。"
+${_mode_label}でエラーが発生しました。
+（${NEW_ERRORS}回目）"
   if [ "$NEW_ERRORS" -lt "$MAX_CONSECUTIVE_ERRORS" ]; then
     log "クールダウン ${ERROR_RETRY_SECONDS}秒後に再試行予定"
   fi
@@ -288,9 +293,15 @@ fi
 log "Claude 実行完了"
 set_state consecutive_errors 0
 _summary=$(extract_summary "$EXEC_OUTPUT")
-telegram_notify "第${ITERATION}サイクル・${CURRENT_MODE} 完了
+case "$CURRENT_MODE" in
+  update) _mode_label="コンテンツ更新" ;;
+  seo)    _mode_label="SEO最適化" ;;
+  report) _mode_label="レポート生成" ;;
+  *)      _mode_label="$CURRENT_MODE" ;;
+esac
+telegram_notify "${_mode_label}が完了しました。
 
-${_summary:-詳細なし}"
+${_summary:-引き続き進めます。}"
 
 # ── Phase 4: Reviewer ─────────────────────────────────────────
 log "--- Phase 4: Reviewer ---"
