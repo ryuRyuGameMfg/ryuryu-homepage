@@ -13,6 +13,7 @@ HOMEPAGE_DIR="$HOME/repository/ryuryu-homepage"
 STATE_FILE="$ENGINE_DIR/data/state.json"
 LOG_DIR="$ENGINE_DIR/logs"
 MEMORY_DIR="$ENGINE_DIR/memory"
+PROMPT_DIR="$ENGINE_DIR/prompts"
 AUTO_REPORTS="$HOME/repository/strategy-room/auto-reports/homepage-daily"
 
 TELEGRAM_CONF="$ENGINE_DIR/.telegram.conf"
@@ -153,109 +154,28 @@ YESTERDAY_MEMORY=$(cat "$MEMORY_DIR/daily/${YESTERDAY}.md" 2>/dev/null || echo "
 # モード別プロンプト構築
 build_prompt() {
   local mode="$1"
-  local base_ctx="## SOUL（不変原則）
-${SOUL}
+  local prompt_file="$PROMPT_DIR/mode-${mode}.md"
 
-## STRATEGY（運用戦略）
-${STRATEGY}
+  if [[ ! -f "$prompt_file" ]]; then
+    log "WARN: プロンプトファイルなし: $prompt_file"
+    return 1
+  fi
 
-## MEMORY（コンテキスト）
-${MEMORY}
+  local prompt
+  prompt=$(cat "$prompt_file")
 
-## AGENT（行動アルゴリズム）
-${AGENT}
+  # プレースホルダー置換
+  prompt="${prompt//\{\{SOUL\}\}/$SOUL}"
+  prompt="${prompt//\{\{STRATEGY\}\}/$STRATEGY}"
+  prompt="${prompt//\{\{MEMORY\}\}/$MEMORY}"
+  prompt="${prompt//\{\{AGENT\}\}/$AGENT}"
+  prompt="${prompt//\{\{DAILY_MEMORY\}\}/$DAILY_MEMORY}"
+  prompt="${prompt//\{\{YESTERDAY_MEMORY\}\}/$YESTERDAY_MEMORY}"
+  prompt="${prompt//\{\{TODAY\}\}/$TODAY}"
+  prompt="${prompt//\{\{TODAY_UNDERSCORE\}\}/${TODAY//-/_}}"
+  prompt="${prompt//\{\{ITERATION\}\}/$ITERATION}"
 
-## 本日の記録（あれば）
-${DAILY_MEMORY}
-
-## 昨日の記録（あれば）
-${YESTERDAY_MEMORY}
-
----
-"
-
-  case "$mode" in
-    update)
-      echo "${base_ctx}
-# タスク: update モード
-
-本日（${TODAY}）の update モードを実行してください。
-
-AGENT.md の「update モード アルゴリズム」に従い、以下を実行してください：
-
-1. ~/repository/note-engine/state.json を読み、前回 update 以降の新規記事を確認
-2. ~/repository/zenn-engine/state.json を読み、前回 update 以降の新規記事を確認
-3. 新記事があれば ~/repository/ryuryu-homepage/data/csv/news.csv に追記
-   （既存フォーマットを必ず確認してから追記すること）
-4. ~/repository/strategy-room/DAILY.md から KPI 数値を読み、
-   ~/repository/ryuryu-homepage/data/csv/sections.csv の実績数値を更新
-5. 変更があれば ~/repository/ryuryu-homepage/ で git commit && git push
-   （コミットメッセージ: homepage: iter${ITERATION}_update {変更概要}）
-6. ~/repository/homepage-engine/memory/hot/${TODAY}.md に実行記録を保存
-7. ~/repository/homepage-engine/state.json の last_deployed を更新
-
-変更がなかった場合も daily memory に「変更なし」と記録してください。
-
-## 完了報告（必須）
-作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
-PHASE_SUMMARY_START
-（やったこと・成果・次のアクション を箇条書きで）
-PHASE_SUMMARY_END
-"
-      ;;
-    seo)
-      echo "${base_ctx}
-# タスク: seo モード
-
-本日（${TODAY}）の seo モードを実行してください。
-
-AGENT.md の「seo モード アルゴリズム」に従い、以下を実行してください：
-
-1. WebSearch で「Unity 開発 外注」「VR 開発 受託」の競合上位サイトを3件調査
-2. ~/repository/homepage-engine/memory/seo-queue.json の未実施タスクを確認
-3. ~/repository/ryuryu-homepage/data/csv/services.csv のコピーを改善
-   （ターゲットキーワードを自然に含める、数値を具体的に）
-4. ~/repository/ryuryu-homepage/data/csv/sections.csv の hero/about テキストを確認・改善
-5. 変更があれば ~/repository/ryuryu-homepage/ で git commit && git push
-   （コミットメッセージ: homepage: iter${ITERATION}_seo {変更概要}）
-6. seo-queue.json の実施済みタスクのステータスを「done」に更新
-7. ~/repository/homepage-engine/memory/hot/${TODAY}.md に実行記録を保存
-
-必ず既存の CSV フォーマットを Read で確認してから編集すること。
-
-## 完了報告（必須）
-作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
-PHASE_SUMMARY_START
-（やったこと・成果・次のアクション を箇条書きで）
-PHASE_SUMMARY_END
-"
-      ;;
-    report)
-      echo "${base_ctx}
-# タスク: report モード
-
-本日（${TODAY}）の report モードを実行してください。
-
-AGENT.md の「report モード アルゴリズム」に従い、以下を実行してください：
-
-1. ~/repository/homepage-engine/memory/hot/ の直近 7日分を読んでサマリー作成
-2. 週次レポートを ~/repository/strategy-room/auto-reports/homepage-daily/${TODAY//-/_}.md に保存
-   （フォーマット: 現状サマリー / 更新履歴 / SEO進捗 / 次サイクルの方針）
-3. ~/repository/homepage-engine/HEARTBEAT.md の各チェック項目を実際に確認して更新
-4. ~/repository/homepage-engine/MEMORY.md を見直し
-   （古い情報を降格、新しい重要情報を昇格、100行以内に維持）
-5. ~/repository/homepage-engine/memory/hot/${TODAY}.md に実行記録を保存
-
-iteration のインクリメントは homepage-engine.sh が自動で行います（不要）。
-
-## 完了報告（必須）
-作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
-PHASE_SUMMARY_START
-（やったこと・成果・次のアクション を箇条書きで）
-PHASE_SUMMARY_END
-"
-      ;;
-  esac
+  echo "$prompt"
 }
 
 PROMPT=$(build_prompt "$CURRENT_MODE")

@@ -24,17 +24,20 @@ playwright-report/
 test-results/
 /coverage
 
-# Engine - sensitive files
-.telegram.conf
-.telegram-offset
-.telegram-conversation.json
+# Telegram設定
+telegram/.telegram.conf
+telegram/.telegram-conversation.json
+telegram/.telegram-offset
+telegram/.telegram-daemon.pid
+telegram/.telegram.conf.bak
 
 # Engine - local state
-state.json
-input.md
+data/state.json
+data/input.md
 
 # Engine - logs & memory
 logs/
+*.log
 memory/hot/
 memory/warm/
 memory/cold/
@@ -42,4 +45,3 @@ memory/cold/
 # macOS
 .DS_Store
 *.pem
-*.log
