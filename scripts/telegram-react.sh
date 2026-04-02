@@ -8,13 +8,11 @@ set -u  # エラーで失敗せずログして続行
 WORK_DIR="$HOME/repository/homepage-engine"
 TELEGRAM_CONF="$WORK_DIR/telegram/.telegram.conf"
 NOTIFY_SCRIPT="$WORK_DIR/scripts/telegram-notify.sh"
-CONV_FILE="$WORK_DIR/telegram/.telegram-conversation.json"
 STATE_FILE="$WORK_DIR/state.json"
 SOUL_FILE="$WORK_DIR/SOUL.md"
 STRATEGY_FILE="$WORK_DIR/STRATEGY.md"
 MEMORY_FILE="$WORK_DIR/MEMORY.md"
 AGENT_FILE="$WORK_DIR/AGENT.md"
-PROMPT_FILE="$WORK_DIR/prompts/telegram-react.md"
 LOG_DIR="$WORK_DIR/logs"
 LOG_FILE="$LOG_DIR/telegram-react.log"
 
@@ -59,28 +57,6 @@ is_reminder_list_command() {
   echo "$msg" | grep -qiE 'リマインダー一覧|リマインド一覧|予定一覧|リマインダー確認|リマインド確認'
 }
 
-# ---- 会話状態読み込み ----
-get_conv() {
-  jq -r ".$1 // empty" "$CONV_FILE" 2>/dev/null || echo ""
-}
-update_conv() {
-  local key="$1" value="$2"
-  local tmp; tmp=$(mktemp)
-  jq ".$key = $value" "$CONV_FILE" > "$tmp" 2>/dev/null && mv "$tmp" "$CONV_FILE" || rm -f "$tmp"
-}
-update_conv_str() {
-  local key="$1" value="$2"
-  local tmp; tmp=$(mktemp)
-  jq ".$key = \"$value\"" "$CONV_FILE" > "$tmp" 2>/dev/null && mv "$tmp" "$CONV_FILE" || rm -f "$tmp"
-}
-
-# ---- 会話スレッドにメッセージ追加 ----
-append_thread() {
-  local role="$1" text="$2"
-  local tmp; tmp=$(mktemp)
-  local ts; ts=$(date '+%Y-%m-%d %H:%M')
-  jq ".thread += [{\"role\": \"$role\", \"text\": $(echo "$text" | jq -Rs .), \"ts\": \"$ts\"}]" "$CONV_FILE" > "$tmp" 2>/dev/null && mv "$tmp" "$CONV_FILE" || rm -f "$tmp"
-}
 
 # ---- サイト変更を GitHub に push ----
 git_push_site() {
@@ -97,13 +73,7 @@ git_push_site() {
 
 # ---- 対象ファイル候補を特定（homepage-engine用）----
 find_article_candidate() {
-  # 1. CONV_FILE の target_article
-  local target; target=$(get_conv "target_article")
-  if [[ -n "$target" && -f "$target" ]]; then
-    echo "$target"
-    return
-  fi
-  # 2. WORK_DIR/data/ 内の最新CSVファイル
+  # 1. WORK_DIR/data/ 内の最新CSVファイル
   local csv_dir="$WORK_DIR/data"
   if [[ -d "$csv_dir" ]]; then
     local latest_csv; latest_csv=$(find "$csv_dir" -name "*.csv" -type f 2>/dev/null | sort -r | head -1)
@@ -132,26 +102,8 @@ build_context() {
   echo -e "$ctx"
 }
 
-# ---- スレッド文字列生成 ----
-build_thread_str() {
-  local summary
-  summary=$(jq -r '.summary // ""' "$CONV_FILE" 2>/dev/null || echo "")
-  local recent
-  recent=$(jq -r '.thread[-10:] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "(会話履歴なし)")
-  if [[ -n "$summary" ]]; then
-    printf '=== 過去の会話まとめ ===\n%s\n=== 直近10件 ===\n%s' "$summary" "$recent"
-  else
-    echo "$recent"
-  fi
-}
 
 # ---- メイン ----
-
-
-# 1. ユーザーメッセージをスレッドに追加
-append_thread "user" "$USER_MESSAGE"
-update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
-update_conv_str "status" "processing"
 
 # リマインダー一覧表示
 if is_reminder_list_command "$USER_MESSAGE"; then
@@ -184,8 +136,6 @@ else:
 PYEOF
   )
   bash "$NOTIFY_SCRIPT" "$LIST_REPLY" 2>>"$LOG_FILE" || true
-  append_thread "assistant" "$LIST_REPLY" || true
-  update_conv_str "status" "idle"
   echo "[$(date '+%Y-%m-%dT%H:%M:%S')] END: reminder list" >> "$LOG_FILE"
   exit 0
 fi
@@ -220,8 +170,6 @@ ID: <code>${DISP_ID}</code>"
   fi
 
   bash "$NOTIFY_SCRIPT" "$REPLY_MSG" 2>>"$LOG_FILE" || true
-  append_thread "assistant" "$REPLY_MSG" || true
-  update_conv_str "status" "idle"
   echo "[$(date '+%Y-%m-%dT%H:%M:%S')] END: reminder processing" >> "$LOG_FILE"
   exit 0
 fi
@@ -234,19 +182,14 @@ fi
 
 # 3. プロンプト構築
 CONTEXT=$(build_context)
-THREAD_STR=$(build_thread_str)
-PROMPT_TEMPLATE=$(cat "$PROMPT_FILE" 2>/dev/null || echo "{{USER_MESSAGE}}")
 
 PROMPT="${CONTEXT}
 ---
-# リアクティブアシスタント指示
+## ユーザーメッセージ
+${USER_MESSAGE}
 
-${PROMPT_TEMPLATE}"
-
-# プレースホルダー置換
-PROMPT="${PROMPT/\{\{USER_MESSAGE\}\}/$USER_MESSAGE}"
-PROMPT="${PROMPT/\{\{THREAD\}\}/$THREAD_STR}"
-PROMPT="${PROMPT/\{\{ARTICLE_CANDIDATE\}\}/$ARTICLE_CANDIDATE}"
+## 対象ファイル候補
+${ARTICLE_CANDIDATE}"
 
 # 4. Claude実行
 CLAUDE_OUTPUT=""
@@ -261,7 +204,11 @@ fi
 
 # 共通ランナーで実行（監視・サイレント経過通知・エラー検知）
 CLAUDE_TMP=$(mktemp /tmp/homepage-engine-claude-output.XXXXXX)
-export CLAUDE_PATH BOT_NAME="homepage-engine GM" LOG_FILE NOTIFY_SCRIPT ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
+export CLAUDE_PATH BOT_NAME="homepage-engine GM" LOG_FILE NOTIFY_SCRIPT
+export ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
+export MAX_BUDGET="2.00"
+export SESSION_ID_FILE="$WORK_DIR/telegram/.telegram-session-id"
+export SYSTEM_PROMPT_FILE="$WORK_DIR/prompts/telegram-react.md"
 export PROGRESS_MSG_ID TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID
 echo "$PROMPT" | bash ~/.claude/scripts/telegram-claude-runner.sh "$CLAUDE_TMP"
 RUNNER_EXIT=$?
@@ -269,7 +216,6 @@ CLAUDE_OUTPUT=$(cat "$CLAUDE_TMP" 2>/dev/null || echo "")
 rm -f "$CLAUDE_TMP"
 
 if [[ $RUNNER_EXIT -ne 0 ]]; then
-  update_conv_str "status" "idle"
   exit 0
 fi
 
@@ -306,49 +252,6 @@ if [[ ! -f "$HOT_FILE" ]]; then
 fi
 PLAIN_REPLY=$(echo "$TELEGRAM_REPLY" | sed 's/<[^>]*>//g')
 printf '[%s] [ai] %s\n' "$(date '+%H:%M')" "$PLAIN_REPLY" >> "$HOT_FILE"
-
-# 7. アシスタント返信をスレッドに追加
-append_thread "assistant" "$TELEGRAM_REPLY" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: append_thread failed" >> "$LOG_FILE"
-update_conv_str "status" "idle"
-
-# 8. target_article更新（ファイルパスが有効なら記録）
-if [[ -n "$ARTICLE_CANDIDATE" && -f "$ARTICLE_CANDIDATE" ]]; then
-  update_conv_str "target_article" "$ARTICLE_CANDIDATE"
-fi
-
-# 9. スレッドが15件超えたらサマリー生成・トリム
-THREAD_LEN=$(jq '.thread | length' "$CONV_FILE" 2>/dev/null || echo "0")
-if [[ "$THREAD_LEN" -gt 15 ]]; then
-  log_sum() { echo "[$(date '+%Y-%m-%dT%H:%M:%S')] [SUMMARY] $1" >> "$LOG_FILE"; }
-  log_sum "スレッド${THREAD_LEN}件 → サマリー生成開始"
-  OLD_MESSAGES=$(jq -r '.thread[:-10] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "")
-  EXISTING_SUMMARY=$(jq -r '.summary // ""' "$CONV_FILE" 2>/dev/null || echo "")
-  SUMMARY_PROMPT="以下の会話履歴を構造化してまとめてください。出力はまとめ文のみ（マーカーや前置き不要）。
-
-## まとめフォーマット（以下の3セクションのみ出力）
-
-【決定事項】
-- 確定した方針・設定・選択肢（箇条書き、最大3件）
-
-【作業状態】
-- 現在進行中・完了した作業（箇条書き、最大3件）
-
-【継続コンテキスト】
-- 次回以降も参照が必要な重要情報（1〜2文）
-
----
-既存のまとめ（統合すること）:
-${EXISTING_SUMMARY}
-
-新しい会話履歴:
-${OLD_MESSAGES}"
-  NEW_SUMMARY=$(echo "$SUMMARY_PROMPT" | "$CLAUDE_PATH" -p 2>>"$LOG_FILE" || echo "")
-  if [[ -n "$NEW_SUMMARY" ]]; then
-    TMP_CONV=$(mktemp)
-    jq --arg s "$NEW_SUMMARY" '.summary = $s | .thread = .thread[-10:]' "$CONV_FILE" > "$TMP_CONV" 2>/dev/null && mv "$TMP_CONV" "$CONV_FILE" || rm -f "$TMP_CONV"
-    log_sum "サマリー更新完了。thread を10件にトリム"
-  fi
-fi
 
 echo "[$(date '+%Y-%m-%dT%H:%M:%S')] END: telegram-react.sh completed" >> "$LOG_FILE"
 exit 0
