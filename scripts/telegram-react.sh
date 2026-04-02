@@ -204,6 +204,7 @@ fi
 
 # 共通ランナーで実行（監視・サイレント経過通知・エラー検知）
 CLAUDE_TMP=$(mktemp /tmp/homepage-engine-claude-output.XXXXXX)
+export WORK_DIR
 export CLAUDE_PATH BOT_NAME="homepage-engine GM" LOG_FILE NOTIFY_SCRIPT
 export ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
 export MAX_BUDGET="3.00"
