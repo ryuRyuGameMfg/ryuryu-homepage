@@ -53,18 +53,6 @@ Read, Write, Edit, Glob, Grep, Bash
 2. ~/repository/ryuryu-homepage/data/csv/ 内の最新CSVファイル
 3. 不明なら現在の state.json のモードと最終デプロイ情報を報告
 
-## 会話履歴
-
-{{THREAD}}
-
-## ユーザーからの最新メッセージ
-
-{{USER_MESSAGE}}
-
-## 現在のコンテキスト（対象ファイル候補）
-
-{{ARTICLE_CANDIDATE}}
-
 ## 実行指示
 
 1. ユーザーの意図を解釈する
