@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ryuryu.homepage-telegram-poll</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/okamotoryuya/.claude/scripts/telegram-daemon-core.sh</string>
+    <string>/Users/okamotoryuya/.claude/bots/homepage-engine/config.sh</string>
+  </array>
+  <key>KeepAlive</key>
+  <true/>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/okamotoryuya/repository/homepage-engine/telegram/runtime/daemon.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/okamotoryuya/repository/homepage-engine/telegram/runtime/daemon.log</string>
+</dict>
+</plist>
