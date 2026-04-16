@@ -1,4 +1,6 @@
 id,date,category,title,description,link,isNew
+16,2026.04.02,update,Unofficial But Better Than Official? Why uLoopMCP Is Going Viral,We published a Zenn article on why the unofficial uLoopMCP tool is gaining massive community attention and its technical background.,https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention,TRUE
+17,2026.04.01,update,Unity Goes All-In on AI | How Claude Code × Unity MCP Changes Development,We published a Zenn article on Unity's official AI integration features and how Claude Code × Unity MCP improves development workflows.,https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide,TRUE
 0,2026.02.15,achievement,AI VTuber (AITuber) Auto-Streaming System Delivered,We delivered a 24-hour YouTube auto-streaming system utilizing customer character data. The system features AI-powered conversation generation and comment responses built with Unity.,,TRUE
 1,2025.08.31,service,Guide Cast Development Service Launched,We have launched a new commissioned development service for guide casts utilizing AI.,#services,TRUE
 2,2023.12.31,achievement,Annual Sales of 5.3 Million Yen Achieved,We achieved annual sales of 5.3 million yen in 2023. We thank everyone for their support.,,FALSE

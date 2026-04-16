@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 1,
+  "iteration": 2,
   "status": "completed",
-  "last_run": "2026-04-13T10:00:00+09:00",
+  "last_run": "2026-04-17T16:03:24Z",
   "consecutive_errors": 0,
-  "notes": "初回weekly_report完了。トレンド調査・SEO評価・デザイン提案・議論トピックを生成。社長への確認事項: 実績件数の現在値、news追加内容、フォント変更可否。"
+  "notes": "news.csv 4月空白を解消。公開済みZenn記事2本追加(uLoopMCP, Unity MCP)。3ファイル(root/ja/en)同期更新。社長未確認事項継続: 実績件数の現在値、フォント変更可否。"
 }

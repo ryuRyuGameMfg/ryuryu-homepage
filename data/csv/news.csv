@@ -1,4 +1,6 @@
 id,date,category,title,description,link,isNew
+16,2026.04.02,update,非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由,Unity開発者コミュニティで話題のuLoopMCPについて、非公式ツールが注目される理由と技術的背景をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention,TRUE
+17,2026.04.01,update,Unity公式がAI連携に本気を出した｜Claude Code × Unity MCPで開発フローが変わる,Unity公式のAI連携機能とClaude Code × Unity MCPを活用した開発フロー改善について解説したZenn記事を公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide,TRUE
 0,2026.03.28,update,Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】,ZennリポジトリへのGitHub Actions設定でtextlintとPRプレビューを導入する方法をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-zenn-github-actions-auto-deploy,TRUE
 1,2026.03.28,update,UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】,UniVRM 2.0を使ったVRMキャラクターのリップシンク実装方法を解説したZenn記事を公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-univrm-lipsync-implementation,TRUE
 2,2026.03.27,update,Claude CodeでUnityテストを自動生成したら開発速度が3倍になった話,Claude Codeを活用してUnityのテストコードを自動生成し、開発効率を大幅に向上させた実践レポートをnoteに公開しました。,https://note.com/ryuryu_game/,TRUE

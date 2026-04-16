@@ -1,4 +1,6 @@
 id,date,category,title,description,link,isNew
+16,2026.04.02,update,非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由,Unity開発者コミュニティで話題のuLoopMCPについて、非公式ツールが注目される理由と技術的背景をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention,TRUE
+17,2026.04.01,update,Unity公式がAI連携に本気を出した｜Claude Code × Unity MCPで開発フローが変わる,Unity公式のAI連携機能とClaude Code × Unity MCPを活用した開発フロー改善について解説したZenn記事を公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide,TRUE
 0,2026.02.15,achievement,AIVTuber（AITuber）自動配信システム納品,お客様のキャラクターデータを活用した24時間YouTube自動ライブ配信システムを納品。AIが自動で会話生成・コメント返信を行い、Unityでビルドしたシステムとして提供しました。,,TRUE
 1,2025.08.31,service,ガイドキャスト受託開発サービス開始,AIを活用したガイドキャストの受託開発サービスを新たに開始しました。,#services,TRUE
 2,2023.12.31,achievement,年間売上530万円を達成,2023年の年間売上が530万円を達成しました。ご支援いただいた皆様に感謝申し上げます。,,FALSE
