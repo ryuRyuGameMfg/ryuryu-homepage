@@ -53,7 +53,7 @@ export default function ServicesSection() {
         process: ['要件定義・企画', 'プロトタイプ開発', '本開発・テスト', '納品・運用サポート'],
         cta: '今すぐ相談',
         ctaAction: 'contact',
-        image: '/services/game-development.png',
+        image: '/services/game-development.webp',
         benefits: ['Unity/Unreal Engine対応', 'Meta Quest・Apple Vision Pro対応', 'プロトタイプから本番環境まで'],
         targetAudience: ['individual', 'company', 'education']
       },
@@ -71,7 +71,7 @@ export default function ServicesSection() {
         process: ['企画・ゲームデザイン', 'プロトタイプ制作', '本開発・デバッグ', 'リリース・運用'],
         cta: '開発相談',
         ctaAction: 'contact',
-        image: '/services/game-development.png',
+        image: '/services/game-development.webp',
         benefits: ['Unity・Unreal Engine対応', 'マルチプラットフォーム対応', 'ゲームデザインから実装まで'],
         targetAudience: ['individual', 'company', 'education']
       },
@@ -89,7 +89,7 @@ export default function ServicesSection() {
         process: ['コンセプト設計', 'ワールド制作', 'テスト・調整', '納品・公開サポート'],
         cta: 'ワールド制作相談',
         ctaAction: 'contact',
-        image: '/services/cluster-world.png',
+        image: '/services/cluster-world.webp',
         benefits: ['cluster公式ガイドライン準拠', 'イベント・展示会向け設計', '短納期対応可能'],
         targetAudience: ['individual', 'company', 'community']
       },
@@ -107,7 +107,7 @@ export default function ServicesSection() {
         process: ['契約・チャット開始', '質問・相談受付', '回答・アドバイス', '継続サポート'],
         cta: 'サポート開始',
         ctaAction: 'contact',
-        image: '/services/chat-support-30day.png',
+        image: '/services/chat-support-30day.webp',
         benefits: ['24時間以内に返信', '技術的な質問に対応', 'コードレビュー・アドバイス'],
         targetAudience: ['individual', 'beginner']
       }

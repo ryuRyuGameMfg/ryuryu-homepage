@@ -21,8 +21,8 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
     '@type': 'Organization',
     name: 'VR/ARソリューション開発 RYURYU',
     alternateName: 'NEURAL BANK',
-    url: 'https://unitymarket.netlify.app',
-    logo: 'https://unitymarket.netlify.app/logo.png',
+    url: 'https://ryuryugame.netlify.app',
+    logo: 'https://ryuryugame.netlify.app/logo.png',
     description: 'Meta Quest、Meta Quest 2、Meta Quest 3専門のVR/AR開発スタジオ。産業用VRトレーニング、ARソリューション、メタバース構築。XR実績50件以上。',
     sameAs: [
       'https://coconala.com/users/1772507',
@@ -53,7 +53,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             price: '300000',
             priceCurrency: 'JPY',
             availability: 'https://schema.org/InStock',
-            priceValidUntil: '2025-12-31'
+            priceValidUntil: '2026-12-31'
           }
         },
         {
@@ -70,7 +70,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             price: '200000',
             priceCurrency: 'JPY',
             availability: 'https://schema.org/InStock',
-            priceValidUntil: '2025-12-31'
+            priceValidUntil: '2026-12-31'
           }
         },
         {
@@ -87,7 +87,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             price: '50000',
             priceCurrency: 'JPY',
             availability: 'https://schema.org/InStock',
-            priceValidUntil: '2025-12-31'
+            priceValidUntil: '2026-12-31'
           }
         },
         {
@@ -104,7 +104,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             price: '20000',
             priceCurrency: 'JPY',
             availability: 'https://schema.org/InStock',
-            priceValidUntil: '2025-12-31'
+            priceValidUntil: '2026-12-31'
           }
         }
       ]
@@ -113,7 +113,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
       '@type': 'ContactPoint',
       contactType: 'customer service',
       availableLanguage: ['Japanese', 'English'],
-      url: 'https://unitymarket.netlify.app/#contact'
+      url: 'https://ryuryugame.netlify.app/#contact'
     }
   }
 
@@ -215,6 +215,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <title>Meta Quest VR/AR開発専門 RYURYU | Unity・VR・メタバース・XR開発外注</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Meta Quest・Meta Quest 2・Meta Quest 3対応VR/AR開発専門。Unity VRアプリ開発、AR産業ソリューション、Clusterメタバース構築。VR開発外注・見積もり対応。XR実績50件以上。Meta Quest開発20%OFF実施中。" />
@@ -227,9 +228,9 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/Melete-Bold.otf" as="font" type="font/otf" crossOrigin="anonymous" />
 
         {/* Preload critical images */}
-        <link rel="preload" href="/services/game-development.png" as="image" />
-        <link rel="preload" href="/services/cluster-world.png" as="image" />
-        <link rel="preload" href="/services/chat-support-30day.png" as="image" />
+        <link rel="preload" href="/services/game-development.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/services/cluster-world.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/services/chat-support-30day.webp" as="image" type="image/webp" />
         
         {/* Preconnect to speed up font loading */}
         <link rel="preconnect" href="/" />
@@ -239,24 +240,22 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://unitymarket.netlify.app" />
+        <meta property="og:url" content="https://ryuryugame.netlify.app" />
         <meta property="og:title" content="Meta Quest VR/AR開発専門 RYURYU | Unity・VR・メタバース・XR開発外注" />
         <meta property="og:description" content="Meta Quest・Quest 2・Quest 3対応VR/AR開発。Unity VRアプリ、産業用VRトレーニング、Clusterメタバース構築。VR開発外注・見積もり対応。XR実績50件以上。20%OFF実施中。" />
         <meta property="og:site_name" content="VR/ARソリューション開発 RYURYU" />
-        <meta property="og:image" content="/ogp-image.png" />
+        <meta property="og:image" content="https://ryuryugame.netlify.app/ogp-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="VR/AR Solution Development RYURYU - Meta Quest・XR Solutions" />
         <meta property="og:locale" content="ja_JP" />
-        <meta property="og:locale:alternate" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Meta Quest VR開発専門 RYURYU | Unity VR/ARアプリ開発外注・見積もり対応" />
         <meta name="twitter:description" content="Meta Quest専門VR開発。Unity VRアプリ、産業用VR、Clusterメタバース。外注・見積もり対応。XR実績50件。Quest開発20%OFF。" />
         <meta name="twitter:creator" content="@ryuryugame" />
-        <meta name="twitter:image" content="/twitter-image.png" />
-        <link rel="canonical" href="https://unitymarket.netlify.app" />
-        <link rel="alternate" hrefLang="ja" href="https://unitymarket.netlify.app" />
-        <link rel="alternate" hrefLang="en" href="https://unitymarket.netlify.app/en" />
+        <meta name="twitter:image" content="https://ryuryugame.netlify.app/twitter-image.png" />
+        <link rel="canonical" href="https://ryuryugame.netlify.app" />
+        <link rel="alternate" hrefLang="ja" href="https://ryuryugame.netlify.app" />
         <link rel="icon" href="/icon.png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>

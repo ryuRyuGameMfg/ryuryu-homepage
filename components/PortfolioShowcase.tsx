@@ -12,13 +12,13 @@ export default function PortfolioShowcase() {
   } | null>(null)
 
   const portfolioImages = [
-    { id: 1, src: '/images/screenshot1-opt.webp', fallback: '/images/screenshot1.png' },
-    { id: 2, src: '/images/screenshot2-opt.webp', fallback: '/images/screenshot2.png' },
-    { id: 3, src: '/images/screenshot3-opt.webp', fallback: '/images/screenshot3.png' },
-    { id: 4, src: '/images/screenshot4-opt.webp', fallback: '/images/screenshot4.png' },
-    { id: 5, src: '/images/screenshot5-opt.webp', fallback: '/images/screenshot5.png' },
-    { id: 6, src: '/images/screenshot6-opt.webp', fallback: '/images/screenshot6.png' },
-    { id: 7, src: '/images/screenshot7-opt.webp', fallback: '/images/screenshot7.png' },
+    { id: 1, src: '/images/screenshot1-opt.webp', fallback: '/images/screenshot1-opt.webp' },
+    { id: 2, src: '/images/screenshot2-opt.webp', fallback: '/images/screenshot2-opt.webp' },
+    { id: 3, src: '/images/screenshot3-opt.webp', fallback: '/images/screenshot3-opt.webp' },
+    { id: 4, src: '/images/screenshot4-opt.webp', fallback: '/images/screenshot4-opt.webp' },
+    { id: 5, src: '/images/screenshot5-opt.webp', fallback: '/images/screenshot5-opt.webp' },
+    { id: 6, src: '/images/screenshot6-opt.webp', fallback: '/images/screenshot6-opt.webp' },
+    { id: 7, src: '/images/screenshot7-opt.webp', fallback: '/images/screenshot7-opt.webp' },
   ]
 
   useEffect(() => {
