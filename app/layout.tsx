@@ -19,11 +19,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'VR/ARソリューション開発 RYURYU',
-    alternateName: 'NEURAL BANK',
+    name: 'ゲーム開発所RYURYU',
+    alternateName: 'RYURYU',
     url: 'https://ryuryugame.netlify.app',
     logo: 'https://ryuryugame.netlify.app/logo.png',
-    description: 'Meta Quest、Meta Quest 2、Meta Quest 3専門のVR/AR開発スタジオ。産業用VRトレーニング、ARソリューション、メタバース構築。XR実績50件以上。',
+    description: 'Meta Quest、Meta Quest 2、Meta Quest 3専門のVR/AR開発スタジオ。産業用VRトレーニング、ARソリューション、メタバース構築。実績220件以上・平均4.9評価。',
     sameAs: [
       'https://coconala.com/users/1772507',
       'https://www.lancers.jp/profile/Ryuya_RStar'
@@ -45,7 +45,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           description: 'Meta Questシリーズ、HoloLens、モバイルAR対応。産業用トレーニング、教育コンテンツ、没入体験の開発。',
           provider: {
             '@type': 'Organization',
-            name: 'VR/ARソリューション開発 RYURYU'
+            name: 'ゲーム開発所RYURYU'
           },
           category: 'VR Development',
           offers: {
@@ -62,7 +62,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           description: 'Unity エンジンを使用したカスタムゲーム開発。モバイル、PC、コンソール対応。',
           provider: {
             '@type': 'Organization',
-            name: 'VR/ARソリューション開発 RYURYU'
+            name: 'ゲーム開発所RYURYU'
           },
           category: 'Game Development',
           offers: {
@@ -79,7 +79,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           description: 'Clusterプラットフォームでのメタバース空間制作。バーチャルイベント、展示会、ソーシャル体験の構築。',
           provider: {
             '@type': 'Organization',
-            name: 'VR/ARソリューション開発 RYURYU'
+            name: 'ゲーム開発所RYURYU'
           },
           category: 'Metaverse Development',
           offers: {
@@ -96,7 +96,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           description: '30日間無制限チャットサポートと60分ビデオレクチャーでUnity開発をサポート。',
           provider: {
             '@type': 'Organization',
-            name: 'VR/ARソリューション開発 RYURYU'
+            name: 'ゲーム開発所RYURYU'
           },
           category: 'Technical Support',
           offers: {
@@ -218,9 +218,9 @@ export default function RootLayout({
         <title>Meta Quest VR/AR開発専門 RYURYU | Unity・VR・メタバース・XR開発外注</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Meta Quest・Meta Quest 2・Meta Quest 3対応VR/AR開発専門。Unity VRアプリ開発、AR産業ソリューション、Clusterメタバース構築。VR開発外注・見積もり対応。XR実績50件以上。Meta Quest開発20%OFF実施中。" />
+        <meta name="description" content="Meta Quest・Meta Quest 2・Meta Quest 3対応VR/AR開発専門。Unity VRアプリ開発、AR産業ソリューション、Clusterメタバース構築。VR開発外注・見積もり対応。実績220件以上・平均4.9評価。" />
         <meta name="keywords" content="VR開発 依頼, VR アプリ 開発 外注, Meta Quest 開発, Meta Quest 2 VR, Meta Quest 3 対応, Unity VR 開発, AR開発 見積もり, VRコンテンツ制作, 産業用VR開発, VRトレーニング, ARソリューション, メタバース開発, Cluster ワールド制作, XR開発会社, HoloLens開発, VR development outsourcing, Unity VR solutions" />
-        <meta name="author" content="VR/ARソリューション開発 RYURYU" />
+        <meta name="author" content="ゲーム開発所RYURYU" />
         
         {/* Preload critical fonts */}
         <link rel="preload" href="/fonts/Melete-Regular.otf" as="font" type="font/otf" crossOrigin="anonymous" />
@@ -242,8 +242,8 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ryuryugame.netlify.app" />
         <meta property="og:title" content="Meta Quest VR/AR開発専門 RYURYU | Unity・VR・メタバース・XR開発外注" />
-        <meta property="og:description" content="Meta Quest・Quest 2・Quest 3対応VR/AR開発。Unity VRアプリ、産業用VRトレーニング、Clusterメタバース構築。VR開発外注・見積もり対応。XR実績50件以上。20%OFF実施中。" />
-        <meta property="og:site_name" content="VR/ARソリューション開発 RYURYU" />
+        <meta property="og:description" content="Meta Quest・Quest 2・Quest 3対応VR/AR開発。Unity VRアプリ、産業用VRトレーニング、Clusterメタバース構築。VR開発外注・見積もり対応。実績220件以上・平均4.9評価。" />
+        <meta property="og:site_name" content="ゲーム開発所RYURYU" />
         <meta property="og:image" content="https://ryuryugame.netlify.app/ogp-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -251,7 +251,7 @@ export default function RootLayout({
         <meta property="og:locale" content="ja_JP" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Meta Quest VR開発専門 RYURYU | Unity VR/ARアプリ開発外注・見積もり対応" />
-        <meta name="twitter:description" content="Meta Quest専門VR開発。Unity VRアプリ、産業用VR、Clusterメタバース。外注・見積もり対応。XR実績50件。Quest開発20%OFF。" />
+        <meta name="twitter:description" content="Meta Quest専門VR開発。Unity VRアプリ、産業用VR、Clusterメタバース。外注・見積もり対応。実績220件以上・平均4.9評価。" />
         <meta name="twitter:creator" content="@ryuryugame" />
         <meta name="twitter:image" content="https://ryuryugame.netlify.app/twitter-image.png" />
         <link rel="canonical" href="https://ryuryugame.netlify.app" />
