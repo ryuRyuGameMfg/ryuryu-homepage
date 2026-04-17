@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 3,
+  "iteration": 4,
   "status": "completed",
-  "last_run": "2026-04-17T16:30:00Z",
+  "last_run": "2026-04-18T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "JSON-LDブランド名統一(NEURAL BANK除去、ゲーム開発所RYURYU統一)。実績数値修正(50件→220件以上・平均4.9)。ai.txt URL修正(unitymarket→ryuryugame)。Netlify自動デプロイ済み。"
+  "notes": "news.csv新エントリ追加(id=18, 2026.04.18)。タイトルに検索意図KW「VR開発の外注」「受託実績220件」を含めseo-003完了。フレッシュネスシグナル更新。"
 }

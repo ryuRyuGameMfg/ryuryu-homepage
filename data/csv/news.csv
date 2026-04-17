@@ -1,4 +1,5 @@
 id,date,category,title,description,link,isNew
+18,2026.04.18,achievement,Meta Quest 3向けVR開発の外注・受託実績が220件を突破 — 2026年春の制作枠を公開,Unity × Meta Quest 3のVR開発やClusterワールド制作など、ゲーム開発の外注・受託実績が220件を突破しました。2026年春の制作枠を受付中です。,#contact,TRUE
 16,2026.04.02,update,非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由,Unity開発者コミュニティで話題のuLoopMCPについて、非公式ツールが注目される理由と技術的背景をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention,TRUE
 17,2026.04.01,update,Unity公式がAI連携に本気を出した｜Claude Code × Unity MCPで開発フローが変わる,Unity公式のAI連携機能とClaude Code × Unity MCPを活用した開発フロー改善について解説したZenn記事を公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide,TRUE
 0,2026.03.28,update,Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】,ZennリポジトリへのGitHub Actions設定でtextlintとPRプレビューを導入する方法をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-03-28-zenn-github-actions-auto-deploy,TRUE
