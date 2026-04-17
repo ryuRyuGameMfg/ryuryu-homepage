@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 2,
+  "iteration": 3,
   "status": "completed",
-  "last_run": "2026-04-17T16:03:24Z",
+  "last_run": "2026-04-17T16:30:00Z",
   "consecutive_errors": 0,
-  "notes": "news.csv 4月空白を解消。公開済みZenn記事2本追加(uLoopMCP, Unity MCP)。3ファイル(root/ja/en)同期更新。社長未確認事項継続: 実績件数の現在値、フォント変更可否。"
+  "notes": "JSON-LDブランド名統一(NEURAL BANK除去、ゲーム開発所RYURYU統一)。実績数値修正(50件→220件以上・平均4.9)。ai.txt URL修正(unitymarket→ryuryugame)。Netlify自動デプロイ済み。"
 }
