@@ -24,14 +24,14 @@
 AGENT.md の「seo モード アルゴリズム」に従い、以下を実行してください：
 
 1. WebSearch で「Unity 開発 外注」「VR 開発 受託」の競合上位サイトを3件調査
-2. ~/repository/homepage-engine/memory/seo-queue.json の未実施タスクを確認
+2. ~/repository/homepage-agent/memory/seo-queue.json の未実施タスクを確認
 3. ~/repository/ryuryu-homepage/data/csv/services.csv のコピーを改善
    （ターゲットキーワードを自然に含める、数値を具体的に）
 4. ~/repository/ryuryu-homepage/data/csv/sections.csv の hero/about テキストを確認・改善
 5. 変更があれば ~/repository/ryuryu-homepage/ で git commit && git push
    （コミットメッセージ: homepage: iter{{ITERATION}}_seo {変更概要}）
 6. seo-queue.json の実施済みタスクのステータスを「done」に更新
-7. ~/repository/homepage-engine/memory/hot/{{TODAY}}.md に実行記録を保存
+7. ~/repository/homepage-agent/memory/hot/{{TODAY}}.md に実行記録を保存
 
 必ず既存の CSV フォーマットを Read で確認してから編集すること。
 

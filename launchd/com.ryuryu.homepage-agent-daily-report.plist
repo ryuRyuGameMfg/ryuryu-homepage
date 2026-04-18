@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.ryuryu.homepage-engine-daily-report</string>
+    <string>com.ryuryu.homepage-agent-daily-report</string>
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
         <string>/Users/okamotoryuya/.claude/bots/lib/daily-report-core.sh</string>
-        <string>/Users/okamotoryuya/.claude/bots/homepage-engine/config.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/homepage-agent/config.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -16,9 +16,9 @@
         <key>Minute</key><integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/homepage-engine/logs/daily-report-stdout.log</string>
+    <string>/Users/okamotoryuya/repository/homepage-agent/logs/daily-report-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/homepage-engine/logs/daily-report-stderr.log</string>
+    <string>/Users/okamotoryuya/repository/homepage-agent/logs/daily-report-stderr.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>EnvironmentVariables</key>

@@ -23,16 +23,16 @@
 
 AGENT.md の「update モード アルゴリズム」に従い、以下を実行してください：
 
-1. ~/repository/note-engine/state.json を読み、前回 update 以降の新規記事を確認
-2. ~/repository/zenn-engine/state.json を読み、前回 update 以降の新規記事を確認
+1. ~/repository/note-agent/state.json を読み、前回 update 以降の新規記事を確認
+2. ~/repository/zenn-agent/state.json を読み、前回 update 以降の新規記事を確認
 3. 新記事があれば ~/repository/ryuryu-homepage/data/csv/news.csv に追記
    （既存フォーマットを必ず確認してから追記すること）
 4. ~/repository/strategy-room/DAILY.md から KPI 数値を読み、
    ~/repository/ryuryu-homepage/data/csv/sections.csv の実績数値を更新
 5. 変更があれば ~/repository/ryuryu-homepage/ で git commit && git push
    （コミットメッセージ: homepage: iter{{ITERATION}}_update {変更概要}）
-6. ~/repository/homepage-engine/memory/hot/{{TODAY}}.md に実行記録を保存
-7. ~/repository/homepage-engine/state.json の last_deployed を更新
+6. ~/repository/homepage-agent/memory/hot/{{TODAY}}.md に実行記録を保存
+7. ~/repository/homepage-agent/state.json の last_deployed を更新
 
 変更がなかった場合も daily memory に「変更なし」と記録してください。
 

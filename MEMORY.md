@@ -1,4 +1,4 @@
-# MEMORY - homepage-engine
+# MEMORY - homepage-agent
 
 ## メモリ構造
 
@@ -15,7 +15,7 @@
 
 ## 現在のフォーカス
 - 初期化済み（Iter0）、3モードサイクル稼働開始
-- エンジンリポジトリ: ~/repository/homepage-engine/
+- エンジンリポジトリ: ~/repository/homepage-agent/
 - ホームページリポジトリ: ~/repository/ryuryu-homepage/
 - 本番URL: https://ryuryugame.netlify.app/（Netlify ホスティング）
 - update / seo / report の3モードサイクルで運用中

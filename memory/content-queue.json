@@ -1,4 +1,4 @@
 {
   "tasks": [],
-  "notes": "update モードで note/zenn-engine の新記事が検出されると自動追加される。"
+  "notes": "update モードで note/zenn-agent の新記事が検出されると自動追加される。"
 }
