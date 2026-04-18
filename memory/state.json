@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 4,
+  "iteration": 5,
   "status": "completed",
-  "last_run": "2026-04-18T00:00:00Z",
+  "last_run": "2026-04-19T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "news.csv新エントリ追加(id=18, 2026.04.18)。タイトルに検索意図KW「VR開発の外注」「受託実績220件」を含めseo-003完了。フレッシュネスシグナル更新。"
+  "notes": "faq.csv(ja) に id=20-24 の長尾キーワード対応Q&Aを追加。Unity外注費用・SES比較・Cluster料金・Meta Quest 3・海外対応をカバーしAEO footprint を拡張。seo-queue に seo-004(done)・seo-005/006/007(pending) を登録し次週以降の実行計画を確保。"
 }

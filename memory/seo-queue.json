@@ -23,6 +23,36 @@
       "priority": "medium",
       "created": "2026-03-27",
       "completed": "2026-04-18"
+    },
+    {
+      "id": "seo-004",
+      "title": "faq.csv に長尾キーワード対応Q&Aを5件追加（Unity外注費用・SES比較・Cluster料金・Meta Quest 3・海外対応）",
+      "status": "done",
+      "priority": "high",
+      "created": "2026-04-19",
+      "completed": "2026-04-19",
+      "notes": "ja/faq.csvに id=20-24 を追加。AEO/検索クエリ対応カバレッジ拡張。"
+    },
+    {
+      "id": "seo-005",
+      "title": "testimonials.csv の最新評価を追加し実績数・評点を最新化",
+      "status": "pending",
+      "priority": "medium",
+      "created": "2026-04-19"
+    },
+    {
+      "id": "seo-006",
+      "title": "en/faq.csv に英語版Q&A追加（海外スタジオ向けAEO）",
+      "status": "pending",
+      "priority": "medium",
+      "created": "2026-04-19"
+    },
+    {
+      "id": "seo-007",
+      "title": "sections.csv の about.description にサブキーワード追加（メタバース制作/XR開発）",
+      "status": "pending",
+      "priority": "low",
+      "created": "2026-04-19"
     }
   ]
 }
