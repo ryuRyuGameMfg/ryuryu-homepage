@@ -43,9 +43,11 @@
     {
       "id": "seo-006",
       "title": "en/faq.csv に英語版Q&A追加（海外スタジオ向けAEO）",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "created": "2026-04-19"
+      "created": "2026-04-19",
+      "completed": "2026-04-20",
+      "notes": "en/faq.csv を id=1-24 の完全版にリライト。ja と id 対応を一致、ja 新規追加分 id=5,11,12,20-24 の計8件を英訳。数値（220件以上・4.9評点・¥300,000〜・1000人規模）と固有名詞（Cluster/Meta Quest 3/Unity/ChatGPT API）を保持。海外スタジオからのAEO/LLM引用流入に対応。"
     },
     {
       "id": "seo-007",

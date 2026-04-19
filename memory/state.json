@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 5,
+  "iteration": 6,
   "status": "completed",
-  "last_run": "2026-04-19T00:00:00Z",
+  "last_run": "2026-04-20T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "faq.csv(ja) に id=20-24 の長尾キーワード対応Q&Aを追加。Unity外注費用・SES比較・Cluster料金・Meta Quest 3・海外対応をカバーしAEO footprint を拡張。seo-queue に seo-004(done)・seo-005/006/007(pending) を登録し次週以降の実行計画を確保。"
+  "notes": "en/faq.csv を ja と完全同期（id=1-24）。既存16件の id を ja に揃えて整備し、ja 新規分 id=5(個人対応)・11(VRデバイス不要)・12(Unity/Unreal)・20(Unity外注費用)・21(SES vs 受託)・22(Cluster料金)・23(Meta Quest 3)・24(海外対応) の8件を英訳追加。数値と固有名詞を保持したAEO最適化で海外インディースタジオ向けの英語検索・LLM引用流入口を確保。"
 }
