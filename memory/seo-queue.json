@@ -52,9 +52,25 @@
     {
       "id": "seo-007",
       "title": "sections.csv の about.description にサブキーワード追加（メタバース制作/XR開発）",
+      "status": "done",
+      "priority": "low",
+      "created": "2026-04-19",
+      "completed": "2026-04-22",
+      "notes": "sections.csv と en/sections.csv の about行を更新。subtitle/descriptionに「メタバース制作」「Clusterメタバース制作」「XR(AR/VR/MR)開発」を追加し、英語版にも同等の意味範囲を反映（Unity Outsourcing / VR / Metaverse / XR Development Professionals）。実績数値（220+・4.9）を保持したままセマンティック範囲を拡張し、メタバース系・XR系検索クエリのオーガニック流入口を追加。"
+    },
+    {
+      "id": "seo-008",
+      "title": "services.csv のfeatures欄にMeta Quest 3/Unity URP/C#等の技術スタックサブKW追加",
       "status": "pending",
       "priority": "low",
-      "created": "2026-04-19"
+      "created": "2026-04-22"
+    },
+    {
+      "id": "seo-009",
+      "title": "video.description・contact.description にもサブKW（XR/メタバース）追加でページ内キーワード密度平準化",
+      "status": "pending",
+      "priority": "low",
+      "created": "2026-04-22"
     }
   ]
 }

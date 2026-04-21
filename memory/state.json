@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 6,
+  "iteration": 7,
   "status": "completed",
-  "last_run": "2026-04-20T00:00:00Z",
+  "last_run": "2026-04-22T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "en/faq.csv を ja と完全同期（id=1-24）。既存16件の id を ja に揃えて整備し、ja 新規分 id=5(個人対応)・11(VRデバイス不要)・12(Unity/Unreal)・20(Unity外注費用)・21(SES vs 受託)・22(Cluster料金)・23(Meta Quest 3)・24(海外対応) の8件を英訳追加。数値と固有名詞を保持したAEO最適化で海外インディースタジオ向けの英語検索・LLM引用流入口を確保。"
+  "notes": "sections.csv（ja/en）のabout行にサブKW追加（メタバース制作／Clusterメタバース制作／XR(AR/VR/MR)開発）。subtitleとdescription両方を更新し、実績220件以上・平均4.9評価の数値を保持したままセマンティック範囲を拡張。英語版もUnity Outsourcing / VR / Metaverse / XR Development Professionalsへアップデートし、海外メタバース・XR検索クエリへのオーガニック流入口を確保。seo-007完了、seo-008/009を次候補として追加。"
 }
