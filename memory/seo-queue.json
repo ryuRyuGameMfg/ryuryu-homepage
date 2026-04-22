@@ -47,7 +47,7 @@
       "priority": "medium",
       "created": "2026-04-19",
       "completed": "2026-04-20",
-      "notes": "en/faq.csv を id=1-24 の完全版にリライト。ja と id 対応を一致、ja 新規追加分 id=5,11,12,20-24 の計8件を英訳。数値（220件以上・4.9評点・¥300,000〜・1000人規模）と固有名詞（Cluster/Meta Quest 3/Unity/ChatGPT API）を保持。海外スタジオからのAEO/LLM引用流入に対応。"
+      "notes": "en/faq.csv を id=1-24 の完全版にリライト。"
     },
     {
       "id": "seo-007",
@@ -56,14 +56,16 @@
       "priority": "low",
       "created": "2026-04-19",
       "completed": "2026-04-22",
-      "notes": "sections.csv と en/sections.csv の about行を更新。subtitle/descriptionに「メタバース制作」「Clusterメタバース制作」「XR(AR/VR/MR)開発」を追加し、英語版にも同等の意味範囲を反映（Unity Outsourcing / VR / Metaverse / XR Development Professionals）。実績数値（220+・4.9）を保持したままセマンティック範囲を拡張し、メタバース系・XR系検索クエリのオーガニック流入口を追加。"
+      "notes": "iter7で top-level data/csv/sections.csv に反映したが、Next.jsは data/csv/ja/sections.csv から読む。iter8 で正しいパス (data/csv/ja/sections.csv) に再適用しレンダリング化。"
     },
     {
       "id": "seo-008",
       "title": "services.csv のfeatures欄にMeta Quest 3/Unity URP/C#等の技術スタックサブKW追加",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
-      "created": "2026-04-22"
+      "created": "2026-04-22",
+      "completed": "2026-04-23",
+      "notes": "ja/services.csv: game-dev features に Unity(URP/HDRP/C#)・VR/AR/MR/XR・Meta Quest 3/Apple Vision Pro を追加。cluster features に Blender/Unity CCK・バーチャルオフィスを追加。support features に Unity C#コードレビュー・パフォーマンス最適化を追加。lecture features に Unity/C#/シェーダー実践指導を追加。en/services.csv にも同等の技術スタックKWを反映。"
     },
     {
       "id": "seo-009",
@@ -71,6 +73,14 @@
       "status": "pending",
       "priority": "low",
       "created": "2026-04-22"
+    },
+    {
+      "id": "seo-010",
+      "title": "legacy data/csv/*.csv (非lang-prefix) の整理 — Next.jsはlang-prefixedから読み込むため実質未使用。削除 or ja/へのsync機構を検討",
+      "status": "pending",
+      "priority": "high",
+      "created": "2026-04-23",
+      "notes": "iter8でドリフト修復時に発覚。top-level CSVへの編集は描画に反映されない。CLEANUP候補だが削除前に他参照有無を確認要。"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 7,
+  "iteration": 8,
   "status": "completed",
-  "last_run": "2026-04-22T00:00:00Z",
+  "last_run": "2026-04-23T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "sections.csv（ja/en）のabout行にサブKW追加（メタバース制作／Clusterメタバース制作／XR(AR/VR/MR)開発）。subtitleとdescription両方を更新し、実績220件以上・平均4.9評価の数値を保持したままセマンティック範囲を拡張。英語版もUnity Outsourcing / VR / Metaverse / XR Development Professionalsへアップデートし、海外メタバース・XR検索クエリへのオーガニック流入口を確保。seo-007完了、seo-008/009を次候補として追加。"
+  "notes": "【重大ドリフト修復】iter0/4/7のSEO編集が legacy data/csv/*.csv にのみ適用されており、Next.jsが読むcanonical data/csv/ja/*.csv には未反映だったことを発見。iter8で ja/services.csv・ja/sections.csv・ja/news.csv を正しいパスに同期し、4イテレーション分のSEO改善（Unity外注/VR受託コピー・about行メタバース/XRサブKW・Meta Quest 3 News Entry）を一挙に実レンダリング化。同時に seo-008 実施（services.features 技術スタックサブKW: Unity URP/HDRP/C#・Meta Quest 3・Apple Vision Pro・Blender/Unity CCK・シェーダー）を ja/en 両言語に適用。seo-010 を新規登録（legacy top-level CSV 整理）。"
 }
