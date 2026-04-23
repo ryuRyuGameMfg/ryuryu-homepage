@@ -70,9 +70,11 @@
     {
       "id": "seo-009",
       "title": "video.description・contact.description にもサブKW（XR/メタバース）追加でページ内キーワード密度平準化",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
-      "created": "2026-04-22"
+      "created": "2026-04-22",
+      "completed": "2026-04-24",
+      "notes": "ja/sections.csv・en/sections.csv の services/video/contact description を大幅拡張。services: Unity外注/VR-AR-MR受託/Clusterメタバース制作/AIキャラクター開発 + 220件実績。video: Meta Quest 3向けVR受託/Clusterワールド制作/XR(AR/VR/MR) + 220件。contact: Unity外注/VR-AR-MR受託/Clusterワールド制作/AIキャラクター開発 + ゲーム開発フリーランス/UnityエンジニアSES + 365日3時間以内返信。英語版も同等のKW密度に。各セクションComponentが sectionData?.description を実描画するため即レンダリング反映。"
     },
     {
       "id": "seo-010",

@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 8,
+  "iteration": 9,
   "status": "completed",
-  "last_run": "2026-04-23T00:00:00Z",
+  "last_run": "2026-04-24T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "【重大ドリフト修復】iter0/4/7のSEO編集が legacy data/csv/*.csv にのみ適用されており、Next.jsが読むcanonical data/csv/ja/*.csv には未反映だったことを発見。iter8で ja/services.csv・ja/sections.csv・ja/news.csv を正しいパスに同期し、4イテレーション分のSEO改善（Unity外注/VR受託コピー・about行メタバース/XRサブKW・Meta Quest 3 News Entry）を一挙に実レンダリング化。同時に seo-008 実施（services.features 技術スタックサブKW: Unity URP/HDRP/C#・Meta Quest 3・Apple Vision Pro・Blender/Unity CCK・シェーダー）を ja/en 両言語に適用。seo-010 を新規登録（legacy top-level CSV 整理）。"
+  "notes": "iter9完了: seo-009 (sections.csv 3セクション description 拡張) を実施。services/video/contact の description を ja/en 両言語で長尾KW密度最大化。Unity外注/VR-AR-MR受託/Clusterメタバース制作/AIキャラクター開発/Meta Quest 3向けVR受託/ゲーム開発フリーランス/UnityエンジニアSES/365日3時間以内返信を各セクションに平準配置。コンポーネント側でsectionData?.descriptionが実描画される事を確認済み（ContactSection/ServicesSection/VideoPortfolioSection/AboutSection）。csv-parse検証OK。次回は seo-010 (legacy top-level CSV クリーンアップ)。"
 }
