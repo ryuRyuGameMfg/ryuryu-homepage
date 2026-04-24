@@ -79,10 +79,19 @@
     {
       "id": "seo-010",
       "title": "legacy data/csv/*.csv (非lang-prefix) の整理 — Next.jsはlang-prefixedから読み込むため実質未使用。削除 or ja/へのsync機構を検討",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "created": "2026-04-23",
-      "notes": "iter8でドリフト修復時に発覚。top-level CSVへの編集は描画に反映されない。CLEANUP候補だが削除前に他参照有無を確認要。"
+      "completed": "2026-04-25",
+      "notes": "iter10で削除実施。data/csv/{faq,news,sections,services,testimonials}.csv の 5 ファイルを削除。urls.csv は lib/urls.ts が top-level を参照しているため保護。全 canonical (ja/en) CSV は 54 行 x 2 言語 を csv-parse/sync で正常パース確認。prompts/mode-seo.md・mode-update.md の stale path (ryuryu-homepage/data/csv/ および top-level CSV) を canonical path (homepage-agent/data/csv/{ja,en}/) に修正。ドリフト再発防止完了。"
+    },
+    {
+      "id": "seo-011",
+      "title": "services.csv detailedDescription のリッチ化（長文SEO本文追加）",
+      "status": "pending",
+      "priority": "medium",
+      "created": "2026-04-25",
+      "notes": "現状の services.csv detailedDescription は簡潔。長尾KW密度を高めつつ実績数値・技術スタック・対応範囲を1サービスあたり200-300字程度に拡張することで、個別サービス詳細モーダル/ページのSEO本文を強化。"
     }
   ]
 }

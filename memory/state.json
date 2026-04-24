@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 9,
+  "iteration": 10,
   "status": "completed",
-  "last_run": "2026-04-24T00:00:00Z",
+  "last_run": "2026-04-25T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter9完了: seo-009 (sections.csv 3セクション description 拡張) を実施。services/video/contact の description を ja/en 両言語で長尾KW密度最大化。Unity外注/VR-AR-MR受託/Clusterメタバース制作/AIキャラクター開発/Meta Quest 3向けVR受託/ゲーム開発フリーランス/UnityエンジニアSES/365日3時間以内返信を各セクションに平準配置。コンポーネント側でsectionData?.descriptionが実描画される事を確認済み（ContactSection/ServicesSection/VideoPortfolioSection/AboutSection）。csv-parse検証OK。次回は seo-010 (legacy top-level CSV クリーンアップ)。"
+  "notes": "iter10完了: seo-010 (legacy top-level CSV クリーンアップ) を実施。data/csv/{faq,news,sections,services,testimonials}.csv の 5 ファイルを削除。urls.csv は lib/urls.ts が top-level 参照しているため保護。全 canonical (ja/en) CSV は csv-parse/sync で 54 行 x 2 言語を正常パース確認。prompts/mode-seo.md・mode-update.md の stale path (ryuryu-homepage/data/csv/ および top-level CSV) を canonical path (homepage-agent/data/csv/{ja,en}/) に修正。ドリフト再発防止完了。次回は seo-005 (testimonials.csv 最新評価追加) または services.csv detailedDescription リッチ化。"
 }
