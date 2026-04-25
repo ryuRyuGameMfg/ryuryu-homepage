@@ -66,7 +66,7 @@
       "priority": "low",
       "created": "2026-04-22",
       "completed": "2026-04-23",
-      "notes": "ja/services.csv: game-dev features に Unity(URP/HDRP/C#)・VR/AR/MR/XR・Meta Quest 3/Apple Vision Pro を追加。cluster features に Blender/Unity CCK・バーチャルオフィスを追加。support features に Unity C#コードレビュー・パフォーマンス最適化を追加。lecture features に Unity/C#/シェーダー実践指導を追加。en/services.csv にも同等の技術スタックKWを反映。"
+      "notes": "ja/services.csv: game-dev features に Unity(URP/HDRP/C#)・VR/AR/MR/XR・Meta Quest 3/Apple Vision Pro を追加。cluster features に Blender/Unity CCK・バーチャルオフィスを追加。support features に Unity C#コードレビュー・パフォーマンス最適化を追加。lecture features に Unity/C#/シェーダー実践指導を追加。en/services.csv にも同等の技術スタックKWを反映。【iter11 追記】ServicesSection.tsx は 'use client' + useEffect 内ハードコード静的データ使用のため、services.csv の features 変更は実描画に反映されていない（seo-011 キャンセルと同様の構造問題）。CSV 側の変更は API 経由では読み込まれていない。"
     },
     {
       "id": "seo-009",
