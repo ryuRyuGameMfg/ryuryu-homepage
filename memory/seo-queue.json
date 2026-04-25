@@ -36,9 +36,10 @@
     {
       "id": "seo-005",
       "title": "testimonials.csv の最新評価を追加し実績数・評点を最新化",
-      "status": "pending",
+      "status": "blocked",
       "priority": "medium",
-      "created": "2026-04-19"
+      "created": "2026-04-19",
+      "notes": "SOUL制約: 実在する評価のみ（創作禁止）。ココナラ/ランサーズの最新レビューデータが必要。社長からの実データ提供待ち。"
     },
     {
       "id": "seo-006",
@@ -88,10 +89,35 @@
     {
       "id": "seo-011",
       "title": "services.csv detailedDescription のリッチ化（長文SEO本文追加）",
-      "status": "pending",
+      "status": "cancelled",
       "priority": "medium",
       "created": "2026-04-25",
-      "notes": "現状の services.csv detailedDescription は簡潔。長尾KW密度を高めつつ実績数値・技術スタック・対応範囲を1サービスあたり200-300字程度に拡張することで、個別サービス詳細モーダル/ページのSEO本文を強化。"
+      "cancelled": "2026-04-26",
+      "notes": "iter11調査で無効と判明。ServicesSection.tsx は 'use client' でuseEffect内にハードコードされた静的データを使用しており、services.csvのdetailedDescriptionは一切読み込まれない。services.csv変更のSEO効果はゼロ。コンポーネント変更は SOUL 制約禁止のため、このタスクはキャンセル。"
+    },
+    {
+      "id": "seo-012",
+      "title": "構造的SEO問題の記録: 全セクションがクライアントレンダリングのため news.csv 定期更新で鮮度維持",
+      "status": "in-progress",
+      "priority": "high",
+      "created": "2026-04-26",
+      "notes": "ServicesSection/NewsSection/FAQSection/TestimonialsSection は全て 'use client' で初期 HTML に本文なし。SSR されるのは layout.tsx の <title>/<meta>/<JSON-LD> のみ（コンポーネント変更禁止）。対策: news.csv の定期更新で Netlify デプロイを起こし sitemap lastModified を更新、クロール頻度維持。セッション0の根本原因は新ドメイン権威不足と外部リンクなし。"
+    },
+    {
+      "id": "seo-013",
+      "title": "GSC インデックスカバレッジ確認 + note/Zenn 記事へのホームページURL追記依頼",
+      "status": "pending",
+      "priority": "high",
+      "created": "2026-04-26",
+      "notes": "セッション0の主因は被リンクゼロ。対策: (1) Google Search Console でインデックス登録状況を確認。(2) note/Zenn 記事末尾に 'ゲーム開発所RYURYU https://ryuryugame.netlify.app' の被リンクを追加（社長対応）。(3) note/Zenn プロフィールページにホームページURLを記載。これが最優先の非コンポーネント改善手段。"
+    },
+    {
+      "id": "seo-014",
+      "title": "news.csv 月次更新の継続 — note/Zenn 新記事公開ごとに追加",
+      "status": "recurring",
+      "priority": "medium",
+      "created": "2026-04-26",
+      "notes": "iter11で seo-012 の対策として開始。note/Zenn 記事公開時に ja/en 両方の news.csv に追加。クロール頻度維持とフレッシュネスシグナルのため月1件以上を維持。"
     }
   ]
 }

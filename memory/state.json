@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 10,
+  "iteration": 11,
   "status": "completed",
-  "last_run": "2026-04-25T00:00:00Z",
+  "last_run": "2026-04-26T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter10完了: seo-010 (legacy top-level CSV クリーンアップ) を実施。data/csv/{faq,news,sections,services,testimonials}.csv の 5 ファイルを削除。urls.csv は lib/urls.ts が top-level 参照しているため保護。全 canonical (ja/en) CSV は csv-parse/sync で 54 行 x 2 言語を正常パース確認。prompts/mode-seo.md・mode-update.md の stale path (ryuryu-homepage/data/csv/ および top-level CSV) を canonical path (homepage-agent/data/csv/{ja,en}/) に修正。ドリフト再発防止完了。次回は seo-005 (testimonials.csv 最新評価追加) または services.csv detailedDescription リッチ化。"
+  "notes": "iter11完了: seo-014 (news.csv 定期更新) を実施。2026-04-25公開note記事『Unity×AIで無料AIVTuberを個人自作する全工程』(note.com/ryuryu_game/n/n628f9d3fd9f5) を ja/en 両 news.csv に追加 (id=19)。en/news.csv に欠落していた id=18 も補完。【重要発見】ServicesSection.tsx が 'use client' + ハードコード静的データのため services.csv detailedDescription は未使用 → seo-011 キャンセル。全コンテンツセクションがクライアントレンダリング。セッション0の根本原因は新ドメイン権威不足・被リンクゼロ。seo-013 (GSC確認+note記事への被リンク追加) を最優先に追加。seo-005 は実データ待ちでブロック中。次回最優先: seo-013 対応と news.csv の継続更新。"
 }
