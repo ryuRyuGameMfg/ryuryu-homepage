@@ -53,5 +53,8 @@ Disallow: /
 # AI.txt location
 AI: https://ryuryugame.netlify.app/ai.txt
 
+# LLMs.txt location (for LLM-powered search engines)
+LLMs-Txt: https://ryuryugame.netlify.app/llms.txt
+
 # Sitemap location
 Sitemap: https://ryuryugame.netlify.app/sitemap.xml

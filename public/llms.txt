@@ -1,0 +1,71 @@
+# ゲーム開発所RYURYU
+
+> Unity・VR/AR・Meta Quest専門ゲーム開発スタジオ。実績220件以上・平均4.9評価。Unity開発外注・VR受託・Clusterメタバース制作・XR開発。日本語・英語対応。
+
+ゲーム開発所RYURYUは、Unityを中心としたゲーム・VR・XR・メタバース開発を専門とする日本のゲーム開発スタジオです。2022年開業。2026年現在220件以上の受託実績・平均4.9評価を保有。ゲーム会社プロデューサー、海外インディースタジオ、企業メタバース担当者など幅広いクライアントに対応。
+
+## サービス一覧
+
+- [Unity開発外注・VR受託開発](https://ryuryugame.netlify.app/#services): ¥300,000〜、納期2週間〜。Meta Quest 3/2/Pro、Apple Vision Pro、PC VR対応。C#/URP/HDRP。産業用VRトレーニング・教育コンテンツ・没入型ゲーム・企業ショールーム。企画から運用まで一貫サポート。
+- [Clusterワールド制作](https://ryuryugame.netlify.app/#services): ¥50,000〜、納期1週間〜。Blender/Unity CCK活用。最大1000人規模のイベント会場・企業ブース・バーチャルオフィス制作対応。
+- [30日間Unityチャットサポート](https://ryuryugame.netlify.app/#services): ¥20,000、期間30日間。Unity/C#コードレビュー・デバッグ・パフォーマンス最適化。無制限質問対応、24時間以内返信。
+- [60分ビデオレクチャー](https://ryuryugame.netlify.app/#services): ¥10,000、60分。Unity/C#/シェーダーのマンツーマン実践指導。録画OK・フォローアップ付き。
+
+## よくある質問
+
+**Unity開発の外注費用は？**
+¥300,000から対応。プロトタイプから商用ゲームまで固定価格制で見積もり。概算見積もりは無料・3営業日以内に提示。
+
+**Clusterワールド制作の料金相場は？**
+¥50,000から対応。企業ブース・バーチャルオフィス・展示会場・イベント会場まで幅広く対応。3Dモデリングから公開後の運用サポートまでワンストップ。
+
+**Meta Quest 3向けVRアプリ開発に対応している？**
+はい。Meta Quest 1/2/3/Proシリーズ標準対応。ハンドトラッキング・パススルーAR・空間アンカー等の最新機能活用可能。
+
+**UnityエンジニアSESと受託開発ではどちらが良い？**
+成果物が明確なら受託開発、社内にノウハウを残したいならSES。両形式に柔軟対応可能。
+
+**海外スタジオ・海外企業からの依頼は可能？**
+日本語・英語両対応。Slack/Discord/Notion活用でタイムゾーンの違いにも対応。NDAの英文締結・多通貨請求対応。
+
+**対応プラットフォームは？**
+iOS・Android・PC（Windows/Mac）・WebGL・VRヘッドセット（Meta Quest、PICO等）・Cluster・Steam VR。マルチプラットフォーム展開対応。
+
+**AI機能の実装は可能？**
+ChatGPT API連携・AI Vtuber・対話型NPC・自動生成システム等の開発実績あり。AITuberKit活用の自動配信システム納品実績も有。
+
+**納期は？**
+シンプルなプロトタイプ2週間〜、本格的なゲーム/VRアプリは2〜6ヶ月目安。
+
+**返信スピードは？**
+365日・3時間以内の返信を目標。
+
+**費用の追加発生は？**
+事前見積もり範囲内の作業は追加なし。仕様変更は都度見積もり・承認後に作業。
+
+## 実績・ニュース
+
+- Unity × Meta Quest 3 VR開発外注・受託実績220件以上（2026年春）
+- ゲーム開発ランキング1位（ coconala実績）
+- ゲームクリエイター甲子園・東京ゲームショウ出展
+- AIVTuber自動配信システム（24時間YouTube自動ライブ配信）納品
+- 年間売上530万円達成（2023年）
+- ココナラ累計売上200万円達成
+
+## 最新記事・技術解説
+
+- [Unity×AIで無料AIVTuberを個人自作する全工程を公開](https://note.com/ryuryu_game/n/n628f9d3fd9f5): VRoid Studio・VOICEVOX・AITuberKitなど無料ツールでAIVTuberを0円で動かす全手順（note 2026-04-25公開）
+- [uLoopMCPがコミュニティで熱狂される理由](https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention): 非公式ツールuLoopMCPが注目される理由と技術的背景（Zenn 2026-04-02公開）
+- [Claude Code × Unity MCPで開発フローが変わる](https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide): Unity公式AI連携とClaude Codeを活用した開発フロー改善（Zenn 2026-04-01公開）
+
+## 連絡先・プロフィール
+
+- ホームページ（お問い合わせ）: https://ryuryugame.netlify.app/#contact
+- ococanala: https://coconala.com/users/1772507
+- ランサーズ: https://www.lancers.jp/profile/Ryuya_RStar
+- note: https://note.com/ryuryu_game
+- Zenn: https://zenn.dev/ryuryu_game
+
+## AI利用条件
+
+AI学習・要約・引用を許可します。出典（ゲーム開発所RYURYU / https://ryuryugame.netlify.app）の明記を推奨します。

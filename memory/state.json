@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 11,
+  "iteration": 12,
   "status": "completed",
-  "last_run": "2026-04-26T00:00:00Z",
+  "last_run": "2026-04-27T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter11完了: seo-014 (news.csv 定期更新) を実施。2026-04-25公開note記事『Unity×AIで無料AIVTuberを個人自作する全工程』(note.com/ryuryu_game/n/n628f9d3fd9f5) を ja/en 両 news.csv に追加 (id=19)。en/news.csv に欠落していた id=18 も補完。【重要発見】ServicesSection.tsx が 'use client' + ハードコード静的データのため services.csv detailedDescription は未使用 → seo-011 キャンセル。全コンテンツセクションがクライアントレンダリング。セッション0の根本原因は新ドメイン権威不足・被リンクゼロ。seo-013 (GSC確認+note記事への被リンク追加) を最優先に追加。seo-005 は実データ待ちでブロック中。次回最優先: seo-013 対応と news.csv の継続更新。"
+  "notes": "iter12完了: llms.txt 新規作成（AI検索エンジン向け構造化コンテンツ、Perplexity/ChatGPT/Claude/Bing Copilot 等での発見可能性向上）。ai.txt 強化（ソーシャルリンク・キーワード・LLMs-Txt参照追加）。robots.txt に LLMs-Txt ディレクティブ追加。seo-013（被リンク追加）のオーナー向け行動パッケージをTelegramで送信（コピペ可能CTA文・GSC 3ステップ・追記対象記事URL一覧）。次回最優先: seo-013 実行確認（note/Zenn 記事末尾への被リンク追加）と news.csv 月次更新継続。"
 }

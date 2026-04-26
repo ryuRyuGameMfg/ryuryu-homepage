@@ -2,7 +2,7 @@
 
 Site-Name: ゲーム開発所RYURYU
 Site-URL: https://ryuryugame.netlify.app
-Description: Unity・VR/AR・Meta Quest開発専門スタジオ
+Description: Unity・VR/AR・Meta Quest・XR開発専門スタジオ。実績220件以上・平均4.9評価。Unity開発外注・VR受託・Clusterメタバース制作。日本語・英語対応。
 
 User-agent: *
 Allow: /
@@ -10,5 +10,23 @@ Disallow: /api/
 Disallow: /_next/
 
 Contact-Email: info@ryuryu-game-factory.com
-Services: VR/AR開発, Unity開発, Meta Quest対応, ゲーム開発, メタバース構築
-License: © 2026 ゲーム開発所RYURYU. AI学習・要約許可、出典明記推奨
+Languages: ja, en
+Services: Unity開発外注, VR/AR/MR/XR受託開発, Meta Quest対応, Clusterメタバース制作, Unity開発サポート, ビデオレクチャー
+Keywords: Unity外注, VR開発 受託, Meta Quest 開発, Cluster ワールド制作, ゲーム開発 フリーランス, UnityエンジニアSES, XR開発
+
+## Profiles
+
+- coconala: https://coconala.com/users/1772507
+- lancers: https://www.lancers.jp/profile/Ryuya_RStar
+- note: https://note.com/ryuryu_game
+- zenn: https://zenn.dev/ryuryu_game
+
+## Services Summary
+
+- Unity開発外注・VR受託: ¥300,000〜（2週間〜）Meta Quest 3/2、Apple Vision Pro、マルチプラットフォーム対応
+- Clusterワールド制作: ¥50,000〜（1週間〜）最大1000人規模イベント対応
+- Unityチャットサポート: ¥20,000（30日間）コードレビュー・デバッグ支援
+- ビデオレクチャー: ¥10,000（60分）マンツーマン指導
+
+LLMs-Txt: https://ryuryugame.netlify.app/llms.txt
+License: © 2026 ゲーム開発所RYURYU. AI学習・要約・引用許可、出典明記推奨
