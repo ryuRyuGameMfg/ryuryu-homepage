@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 12,
+  "iteration": 13,
   "status": "completed",
-  "last_run": "2026-04-27T00:00:00Z",
+  "last_run": "2026-04-28T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter12完了: llms.txt 新規作成（AI検索エンジン向け構造化コンテンツ、Perplexity/ChatGPT/Claude/Bing Copilot 等での発見可能性向上）。ai.txt 強化（ソーシャルリンク・キーワード・LLMs-Txt参照追加）。robots.txt に LLMs-Txt ディレクティブ追加。seo-013（被リンク追加）のオーナー向け行動パッケージをTelegramで送信（コピペ可能CTA文・GSC 3ステップ・追記対象記事URL一覧）。次回最優先: seo-013 実行確認（note/Zenn 記事末尾への被リンク追加）と news.csv 月次更新継続。"
+  "notes": "iter13完了: news.csv（ja/en）にMeta Quest 3価格改定ニュース（2026-04-19値上げ、RAM不足起因）を追加。鮮度シグナル強化・ロングテールキーワード拡張（Meta Quest 3価格改定・VR開発外注固定価格制）。次回最優先: seo-013（note/Zenn被リンク追加）実行確認と5月記事連動news更新。"
 }

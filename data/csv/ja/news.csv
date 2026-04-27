@@ -1,4 +1,5 @@
 id,date,category,title,description,link,isNew
+20,2026.04.28,update,Meta Quest 3が価格改定｜VR開発外注の固定価格制で予算リスクをゼロに,"2026年4月19日よりMeta Quest 3・Quest 3SがRAMコスト高騰で値上げ（Quest 3S: $299.99→$349.99）。ハードウェア費用が増す中、開発費を固定価格制で管理できるゲーム開発所RYURYUのMeta Quest向けVRアプリ外注・受託開発をご活用ください。",https://techcrunch.com/2026/04/16/meta-raises-quest-3-and-quest-3s-prices-due-to-ram-shortage/,TRUE
 19,2026.04.25,update,Unity×AIで無料AIVTuberを個人自作する全工程を公開,VRoid Studio・VOICEVOX・AITuberKitなど無料ツールのみでAIVTuberを0円で動かす全手順をnoteに公開しました。Unity開発・AI活用に興味のある方はぜひ。,https://note.com/ryuryu_game/n/n628f9d3fd9f5,TRUE
 18,2026.04.18,achievement,Meta Quest 3向けVR開発の外注・受託実績が220件を突破 — 2026年春の制作枠を公開,Unity × Meta Quest 3のVR開発やClusterワールド制作など、ゲーム開発の外注・受託実績が220件を突破しました。2026年春の制作枠を受付中です。,#contact,TRUE
 16,2026.04.02,update,非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由,Unity開発者コミュニティで話題のuLoopMCPについて、非公式ツールが注目される理由と技術的背景をZennに公開しました。,https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention,TRUE
