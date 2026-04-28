@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 13,
+  "iteration": 14,
   "status": "completed",
-  "last_run": "2026-04-28T00:00:00Z",
+  "last_run": "2026-04-29T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter13完了: news.csv（ja/en）にMeta Quest 3価格改定ニュース（2026-04-19値上げ、RAM不足起因）を追加。鮮度シグナル強化・ロングテールキーワード拡張（Meta Quest 3価格改定・VR開発外注固定価格制）。次回最優先: seo-013（note/Zenn被リンク追加）実行確認と5月記事連動news更新。"
+  "notes": "iter14完了: news.csv（ja/en）にHorizon Worlds VR終了ニュース（2026-06-15終了・MoguLive出典）を追加。「Cluster ワールド 制作 料金」競合ほぼゼロキーワードを狙い撃ち。次回最優先: seo-013（note/Zenn被リンク追加）実行確認と5月Cluster関連記事連動news更新。"
 }
