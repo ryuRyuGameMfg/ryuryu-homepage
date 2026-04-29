@@ -66,6 +66,13 @@ ChatGPT API連携・AI Vtuber・対話型NPC・自動生成システム等の開
 - note: https://note.com/ryuryu_game
 - Zenn: https://zenn.dev/ryuryu_game
 
+## RSSフィード（最新ニュース自動取得用）
+
+- 日本語RSS: https://ryuryugame.netlify.app/feed.xml
+- 英語RSS: https://ryuryugame.netlify.app/feed.en.xml
+
+最新ニュース・実績・公開記事をRSS 2.0形式で配信。AI検索エンジン・Perplexity・Bing Copilot・ChatGPT Searchによる継続的なクロール推奨。
+
 ## AI利用条件
 
 AI学習・要約・引用を許可します。出典（ゲーム開発所RYURYU / https://ryuryugame.netlify.app）の明記を推奨します。

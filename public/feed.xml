@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>ゲーム開発所RYURYU - 最新ニュース</title>
+    <link>https://ryuryugame.netlify.app/</link>
+    <description>Unity開発外注・Meta Quest VR受託・Clusterメタバース制作・XR開発のゲーム開発所RYURYUの最新ニュース・実績。実績220件以上・平均4.9評価。</description>
+    <language>ja</language>
+    <copyright>Copyright (c) 2022-2026 ゲーム開発所RYURYU / 岡本竜弥</copyright>
+    <managingEditor>contact@ryuryugame.netlify.app (岡本竜弥)</managingEditor>
+    <webMaster>contact@ryuryugame.netlify.app (岡本竜弥)</webMaster>
+    <category>Game Development</category>
+    <category>Unity</category>
+    <category>VR</category>
+    <category>Cluster Metaverse</category>
+    <atom:link href="https://ryuryugame.netlify.app/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2026 01:00:00 +0900</lastBuildDate>
+    <pubDate>Wed, 29 Apr 2026 00:00:00 +0900</pubDate>
+    <ttl>1440</ttl>
+    <generator>homepage-agent (Claude Code) RSS generator</generator>
+    <image>
+      <url>https://ryuryugame.netlify.app/Logo_yoko.png</url>
+      <title>ゲーム開発所RYURYU</title>
+      <link>https://ryuryugame.netlify.app/</link>
+    </image>
+
+    <item>
+      <title><![CDATA[Meta Horizon Worlds VRが6月に終了｜Clusterワールド制作受託でメタバース継続を支援]]></title>
+      <link>https://www.moguravr.com/meta-horizon-worlds-vr-end-2026/</link>
+      <description><![CDATA[MetaがHorizon WorldsのVR版（Quest版）を2026年6月15日に終了すると発表（3月31日ストア削除済み）。企業メタバース・バーチャルイベントの場をClusterへ移行する受託開発をRYURYUが支援します。Clusterワールド制作は¥50,000〜・1週間〜で受付中です。]]></description>
+      <category>update</category>
+      <category>Cluster</category>
+      <category>Metaverse</category>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-21-2026-04-29</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Meta Quest 3が価格改定｜VR開発外注の固定価格制で予算リスクをゼロに]]></title>
+      <link>https://techcrunch.com/2026/04/16/meta-raises-quest-3-and-quest-3s-prices-due-to-ram-shortage/</link>
+      <description><![CDATA[2026年4月19日よりMeta Quest 3・Quest 3SがRAMコスト高騰で値上げ（Quest 3S: $299.99→$349.99）。ハードウェア費用が増す中、開発費を固定価格制で管理できるゲーム開発所RYURYUのMeta Quest向けVRアプリ外注・受託開発をご活用ください。]]></description>
+      <category>update</category>
+      <category>Meta Quest 3</category>
+      <category>VR</category>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-20-2026-04-28</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Unity×AIで無料AIVTuberを個人自作する全工程を公開]]></title>
+      <link>https://note.com/ryuryu_game/n/n628f9d3fd9f5</link>
+      <description><![CDATA[VRoid Studio・VOICEVOX・AITuberKitなど無料ツールのみでAIVTuberを0円で動かす全手順をnoteに公開しました。Unity開発・AI活用に興味のある方はぜひ。]]></description>
+      <category>update</category>
+      <category>AI</category>
+      <category>AIVTuber</category>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-19-2026-04-25</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Meta Quest 3向けVR開発の外注・受託実績が220件を突破 — 2026年春の制作枠を公開]]></title>
+      <link>https://ryuryugame.netlify.app/#contact</link>
+      <description><![CDATA[Unity × Meta Quest 3のVR開発やClusterワールド制作など、ゲーム開発の外注・受託実績が220件を突破しました。2026年春の制作枠を受付中です。]]></description>
+      <category>achievement</category>
+      <category>Meta Quest 3</category>
+      <category>Unity</category>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-18-2026-04-18</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由]]></title>
+      <link>https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention</link>
+      <description><![CDATA[Unity開発者コミュニティで話題のuLoopMCPについて、非公式ツールが注目される理由と技術的背景をZennに公開しました。]]></description>
+      <category>update</category>
+      <category>Unity</category>
+      <category>MCP</category>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-16-2026-04-02</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Unity公式がAI連携に本気を出した｜Claude Code × Unity MCPで開発フローが変わる]]></title>
+      <link>https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide</link>
+      <description><![CDATA[Unity公式のAI連携機能とClaude Code × Unity MCPを活用した開発フロー改善について解説したZenn記事を公開しました。]]></description>
+      <category>update</category>
+      <category>Unity</category>
+      <category>Claude Code</category>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-17-2026-04-01</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[AIVTuber（AITuber）自動配信システム納品]]></title>
+      <link>https://ryuryugame.netlify.app/#news</link>
+      <description><![CDATA[お客様のキャラクターデータを活用した24時間YouTube自動ライブ配信システムを納品。AIが自動で会話生成・コメント返信を行い、Unityでビルドしたシステムとして提供しました。]]></description>
+      <category>achievement</category>
+      <category>AI</category>
+      <category>AIVTuber</category>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-0-2026-02-15</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[ガイドキャスト受託開発サービス開始]]></title>
+      <link>https://ryuryugame.netlify.app/#services</link>
+      <description><![CDATA[AIを活用したガイドキャストの受託開発サービスを新たに開始しました。]]></description>
+      <category>service</category>
+      <category>AI</category>
+      <pubDate>Sun, 31 Aug 2025 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-1-2025-08-31</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[年間売上530万円を達成]]></title>
+      <link>https://ryuryugame.netlify.app/#news</link>
+      <description><![CDATA[2023年の年間売上が530万円を達成しました。ご支援いただいた皆様に感謝申し上げます。]]></description>
+      <category>achievement</category>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-2-2023-12-31</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[ココナラ累計売上200万円達成]]></title>
+      <link>https://ryuryugame.netlify.app/#news</link>
+      <description><![CDATA[ココナラでの累計売上が200万円を突破いたしました。クライアント様のご信頼に感謝いたします。]]></description>
+      <category>achievement</category>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-3-2023-08-15</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[個人事業主として正式開業]]></title>
+      <link>https://ryuryugame.netlify.app/#news</link>
+      <description><![CDATA[正式に開業届を提出し、個人事業主としての活動をスタートいたしました。]]></description>
+      <category>service</category>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-4-2022-06-01</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+    <item>
+      <title><![CDATA[ココナラサービス提供開始]]></title>
+      <link>https://ryuryugame.netlify.app/#services</link>
+      <description><![CDATA[クラウドソーシングプラットフォーム「ココナラ」でのサービス提供を開始いたしました。]]></description>
+      <category>service</category>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-5-2022-03-15</guid>
+      <dc:creator>ゲーム開発所RYURYU</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.xml">ゲーム開発所RYURYU - 最新ニュース</source>
+    </item>
+
+  </channel>
+</rss>

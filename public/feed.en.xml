@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>RYURYU Game Studio - Latest News</title>
+    <link>https://ryuryugame.netlify.app/en</link>
+    <description>Unity outsourcing, Meta Quest VR, Cluster metaverse and XR development by RYURYU Game Studio. 220+ projects delivered, 4.9 average rating. Available in Japanese and English.</description>
+    <language>en</language>
+    <copyright>Copyright (c) 2022-2026 RYURYU Game Studio / Ryuya Okamoto</copyright>
+    <managingEditor>contact@ryuryugame.netlify.app (Ryuya Okamoto)</managingEditor>
+    <webMaster>contact@ryuryugame.netlify.app (Ryuya Okamoto)</webMaster>
+    <category>Game Development</category>
+    <category>Unity</category>
+    <category>VR</category>
+    <category>Cluster Metaverse</category>
+    <atom:link href="https://ryuryugame.netlify.app/feed.en.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2026 01:00:00 +0900</lastBuildDate>
+    <pubDate>Wed, 29 Apr 2026 00:00:00 +0900</pubDate>
+    <ttl>1440</ttl>
+    <generator>homepage-agent (Claude Code) RSS generator</generator>
+    <image>
+      <url>https://ryuryugame.netlify.app/Logo_yoko.png</url>
+      <title>RYURYU Game Studio</title>
+      <link>https://ryuryugame.netlify.app/en</link>
+    </image>
+
+    <item>
+      <title><![CDATA[Meta Horizon Worlds VR Shutting Down June 2026 | Migrate to Cluster with RYURYU]]></title>
+      <link>https://www.moguravr.com/meta-horizon-worlds-vr-end-2026/</link>
+      <description><![CDATA[Meta is ending Horizon Worlds on Meta Quest on June 15 2026 (store removed March 31). RYURYU supports your migration to Cluster for corporate metaverse and virtual events — Unity-based Cluster world creation from JPY 50,000 / 1 week.]]></description>
+      <category>update</category>
+      <category>Cluster</category>
+      <category>Metaverse</category>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-21-2026-04-29</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Meta Quest 3 Price Hike | Lock In Your VR Budget with Fixed-Price Outsourcing]]></title>
+      <link>https://techcrunch.com/2026/04/16/meta-raises-quest-3-and-quest-3s-prices-due-to-ram-shortage/</link>
+      <description><![CDATA[Meta raised Quest 3 and Quest 3S prices on April 19 2026 (Quest 3S: $299.99 to $349.99) due to RAM shortages. As hardware costs rise RYURYU's fixed-price VR development outsourcing keeps your project budget predictable from day one.]]></description>
+      <category>update</category>
+      <category>Meta Quest 3</category>
+      <category>VR</category>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-20-2026-04-28</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Published: Full Guide to Building a Free AIVTuber with Unity and AI]]></title>
+      <link>https://note.com/ryuryu_game/n/n628f9d3fd9f5</link>
+      <description><![CDATA[We published a step-by-step note guide on building a free AIVTuber using VRoid Studio, VOICEVOX, and AITuberKit — all with zero budget required.]]></description>
+      <category>update</category>
+      <category>AI</category>
+      <category>AIVTuber</category>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-19-2026-04-25</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[220+ VR/AR Project Milestone — 2026 Spring Slots Now Open]]></title>
+      <link>https://ryuryugame.netlify.app/en#contact</link>
+      <description><![CDATA[Unity x Meta Quest 3 VR development and Cluster world creation projects have surpassed 220 total deliveries. Spring 2026 project slots are now open.]]></description>
+      <category>achievement</category>
+      <category>Meta Quest 3</category>
+      <category>Unity</category>
+      <pubDate>Sat, 18 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-18-2026-04-18</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Unofficial But Better Than Official? Why uLoopMCP Is Going Viral]]></title>
+      <link>https://zenn.dev/ryuryu_game/articles/2026-04-02-uloopmcp-community-attention</link>
+      <description><![CDATA[We published a Zenn article on why the unofficial uLoopMCP tool is gaining massive community attention and its technical background.]]></description>
+      <category>update</category>
+      <category>Unity</category>
+      <category>MCP</category>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-16-2026-04-02</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Unity Goes All-In on AI | How Claude Code x Unity MCP Changes Development]]></title>
+      <link>https://zenn.dev/ryuryu_game/articles/2026-04-01-unity-official-mcp-complete-guide</link>
+      <description><![CDATA[We published a Zenn article on Unity's official AI integration features and how Claude Code x Unity MCP improves development workflows.]]></description>
+      <category>update</category>
+      <category>Unity</category>
+      <category>Claude Code</category>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-17-2026-04-01</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[AI VTuber (AITuber) Auto-Streaming System Delivered]]></title>
+      <link>https://ryuryugame.netlify.app/en#news</link>
+      <description><![CDATA[We delivered a 24-hour YouTube auto-streaming system utilizing customer character data. The system features AI-powered conversation generation and comment responses built with Unity.]]></description>
+      <category>achievement</category>
+      <category>AI</category>
+      <category>AIVTuber</category>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-0-2026-02-15</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Guide Cast Development Service Launched]]></title>
+      <link>https://ryuryugame.netlify.app/en#services</link>
+      <description><![CDATA[We have launched a new commissioned development service for guide casts utilizing AI.]]></description>
+      <category>service</category>
+      <category>AI</category>
+      <pubDate>Sun, 31 Aug 2025 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-1-2025-08-31</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Annual Sales of 5.3 Million Yen Achieved]]></title>
+      <link>https://ryuryugame.netlify.app/en#news</link>
+      <description><![CDATA[We achieved annual sales of 5.3 million yen in 2023. We thank everyone for their support.]]></description>
+      <category>achievement</category>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-2-2023-12-31</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[2 Million Yen Total Sales on Coconala]]></title>
+      <link>https://ryuryugame.netlify.app/en#news</link>
+      <description><![CDATA[Our total sales on Coconala have exceeded 2 million yen. We appreciate our clients trust.]]></description>
+      <category>achievement</category>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-4-2023-08-15</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Officially Started as Sole Proprietor]]></title>
+      <link>https://ryuryugame.netlify.app/en#news</link>
+      <description><![CDATA[We officially submitted our business registration and started activities as a sole proprietor.]]></description>
+      <category>service</category>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-5-2022-06-01</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+    <item>
+      <title><![CDATA[Started Coconala Service]]></title>
+      <link>https://ryuryugame.netlify.app/en#services</link>
+      <description><![CDATA[We have started providing services on the crowdsourcing platform Coconala.]]></description>
+      <category>service</category>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">ryuryugame-news-en-6-2022-03-15</guid>
+      <dc:creator>RYURYU Game Studio</dc:creator>
+      <source url="https://ryuryugame.netlify.app/feed.en.xml">RYURYU Game Studio - Latest News</source>
+    </item>
+
+  </channel>
+</rss>

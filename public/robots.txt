@@ -58,3 +58,8 @@ LLMs-Txt: https://ryuryugame.netlify.app/llms.txt
 
 # Sitemap location
 Sitemap: https://ryuryugame.netlify.app/sitemap.xml
+
+# RSS Feeds (for Bing Webmaster, Feedly, Inoreader, Perplexity, AI search engines)
+# Bing prioritises RSS-discovered URLs for fast indexing without needing backlinks.
+Sitemap: https://ryuryugame.netlify.app/feed.xml
+Sitemap: https://ryuryugame.netlify.app/feed.en.xml

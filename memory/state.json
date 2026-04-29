@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 14,
+  "iteration": 15,
   "status": "completed",
-  "last_run": "2026-04-29T00:00:00Z",
+  "last_run": "2026-04-30T01:10:00Z",
   "consecutive_errors": 0,
-  "notes": "iter14完了: news.csv（ja/en）にHorizon Worlds VR終了ニュース（2026-06-15終了・MoguLive出典）を追加。「Cluster ワールド 制作 料金」競合ほぼゼロキーワードを狙い撃ち。次回最優先: seo-013（note/Zenn被リンク追加）実行確認と5月Cluster関連記事連動news更新。"
+  "notes": "iter15完了: 14iter停滞の被リンク詰まりを別チャネル（RSS 2.0）で構造的回避。public/feed.xml（ja, 12件）/ feed.en.xml（en, 12件）新規作成、robots.txt の Sitemap: 行に両RSSを追加（Bing Webmaster Tools 自動検出経路）、llms.txt にRSSセクション追加（Perplexity / ChatGPT Search向け）。xmllint構文OK。週次レポートに社長向け戦略提案 A vs B（agent振る舞い／KPI計測／被リンク並走）3件を追記。次回最優先: ①Bing Webmaster Toolsへの登録確認 ②GA4実数値のKPI反映ルート確立。"
 }
