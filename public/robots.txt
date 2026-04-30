@@ -63,3 +63,4 @@ Sitemap: https://ryuryugame.netlify.app/sitemap.xml
 # Bing prioritises RSS-discovered URLs for fast indexing without needing backlinks.
 Sitemap: https://ryuryugame.netlify.app/feed.xml
 Sitemap: https://ryuryugame.netlify.app/feed.en.xml
+Sitemap: https://ryuryugame.netlify.app/cluster-world-seisaku.html

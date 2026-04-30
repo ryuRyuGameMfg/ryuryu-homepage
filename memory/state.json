@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 15,
+  "iteration": 16,
   "status": "completed",
-  "last_run": "2026-04-30T01:10:00Z",
+  "last_run": "2026-05-01T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter15完了: 14iter停滞の被リンク詰まりを別チャネル（RSS 2.0）で構造的回避。public/feed.xml（ja, 12件）/ feed.en.xml（en, 12件）新規作成、robots.txt の Sitemap: 行に両RSSを追加（Bing Webmaster Tools 自動検出経路）、llms.txt にRSSセクション追加（Perplexity / ChatGPT Search向け）。xmllint構文OK。週次レポートに社長向け戦略提案 A vs B（agent振る舞い／KPI計測／被リンク並走）3件を追記。次回最優先: ①Bing Webmaster Toolsへの登録確認 ②GA4実数値のKPI反映ルート確立。"
+  "notes": "iter16完了: クライアントレンダリング問題（layout.tsx 'use client' + dynamic()全セクション）をpublic/静的HTMLで回避。cluster-world-seisaku.htmlを新規作成（JSON-LD in <head>・FAQPage8件・Serviceスキーマ）。Horizon Worlds VR終了（6/15）の需要タイミングを捉えたClusterワールド制作ランディングページ。robots.txtにSitemap:追加（Bing 24h発見経路）。news.csv ja/enにHorizon Worlds移行エントリ追加。次回: 静的HTMLの効果確認 + 追加ページ（Unity外注/Meta Quest VR）検討。"
 }
