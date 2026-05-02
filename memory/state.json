@@ -1,8 +1,8 @@
 {
   "mode": "weekly_report",
-  "iteration": 17,
+  "iteration": 18,
   "status": "completed",
-  "last_run": "2026-05-02T01:11:00Z",
+  "last_run": "2026-05-03T00:00:00Z",
   "consecutive_errors": 0,
-  "notes": "iter17完了: 第1ターゲットキーワード『Unity 開発 外注』を攻略する静的HTMLランディングページ unity-kaigai.html を新規作成（JSON-LD in <head>・FAQPage8件・Serviceスキーマ・¥30,000〜・最短2週間〜）。対応分野: ゲーム/VR/Meta Quest/Cluster/AIVTuber/SES/海外対応。news.csv ja/en にid=23追加。commit d7a2cb2 → push成功 → Netlifyデプロイ開始。public/静的HTML戦略が軌道に乗り cluster-world-seisaku.html（Cluster/5月） + unity-kaigai.html（Unity外注/5月）の2本柱が完成。次回: meta-quest-vr.html（Meta Quest VR開発）またはKPI計測結果に基づく改善。"
+  "notes": "iter18完了: SOULターゲットキーワード『VR 開発 受託』および第2ターゲット『海外インディースタジオ（Meta Quest）』を攻略する静的HTMLランディングページ meta-quest-vr.html を新規作成（JSON-LD in <head>・FAQPage8件・Serviceスキーマ・¥50,000〜・最短3週間〜・AppLab申請対応）。news.csv ja/en にid=24追加。静的HTML戦略が3本柱に拡張: cluster-world-seisaku.html + unity-kaigai.html + meta-quest-vr.html。次回: unity-ses.html（UnityエンジニアSES）またはKPI計測結果に基づく改善。"
 }
