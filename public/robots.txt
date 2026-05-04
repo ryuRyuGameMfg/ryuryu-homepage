@@ -63,4 +63,10 @@ Sitemap: https://ryuryugame.netlify.app/sitemap.xml
 # Bing prioritises RSS-discovered URLs for fast indexing without needing backlinks.
 Sitemap: https://ryuryugame.netlify.app/feed.xml
 Sitemap: https://ryuryugame.netlify.app/feed.en.xml
+
+# Static SEO Landing Pages (commercial-intent keywords, FAQPage rich results)
+# These are explicitly registered so AI crawlers and Bing/Google discover them
+# without depending on internal hyperlinks (the SPA does not currently link to them).
 Sitemap: https://ryuryugame.netlify.app/cluster-world-seisaku.html
+Sitemap: https://ryuryugame.netlify.app/unity-kaigai.html
+Sitemap: https://ryuryugame.netlify.app/meta-quest-vr.html
