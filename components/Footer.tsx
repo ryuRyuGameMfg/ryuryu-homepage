@@ -16,10 +16,10 @@ export default function Footer() {
   ]
   
   const seoLinks = [
-    { label: 'VR開発', href: '#services' },
-    { label: 'Unity開発', href: '#services' },
-    { label: 'Meta Quest対応', href: '#services' },
-    { label: 'Cluster開発', href: '#services' },
+    { label: 'VR開発', href: '/meta-quest-vr.html' },
+    { label: 'Unity開発', href: '/unity-kaigai.html' },
+    { label: 'Meta Quest対応', href: '/meta-quest-vr.html' },
+    { label: 'Cluster開発', href: '/cluster-world-seisaku.html' },
     { label: 'AR開発', href: '#services' },
   ]
   

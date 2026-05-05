@@ -23,6 +23,7 @@ interface ServiceDetail {
   image: string
   benefits?: string[]
   targetAudience?: string[]
+  landingUrl?: string
 }
 
 export default function ServicesSection() {
@@ -55,7 +56,8 @@ export default function ServicesSection() {
         ctaAction: 'contact',
         image: '/services/game-development.webp',
         benefits: ['Unity/Unreal Engine対応', 'Meta Quest・Apple Vision Pro対応', 'プロトタイプから本番環境まで'],
-        targetAudience: ['individual', 'company', 'education']
+        targetAudience: ['individual', 'company', 'education'],
+        landingUrl: '/meta-quest-vr.html',
       },
       {
         id: 'game-dev',
@@ -73,7 +75,8 @@ export default function ServicesSection() {
         ctaAction: 'contact',
         image: '/services/game-development.webp',
         benefits: ['Unity・Unreal Engine対応', 'マルチプラットフォーム対応', 'ゲームデザインから実装まで'],
-        targetAudience: ['individual', 'company', 'education']
+        targetAudience: ['individual', 'company', 'education'],
+        landingUrl: '/unity-kaigai.html',
       },
       {
         id: 'cluster',
@@ -91,7 +94,8 @@ export default function ServicesSection() {
         ctaAction: 'contact',
         image: '/services/cluster-world.webp',
         benefits: ['cluster公式ガイドライン準拠', 'イベント・展示会向け設計', '短納期対応可能'],
-        targetAudience: ['individual', 'company', 'community']
+        targetAudience: ['individual', 'company', 'community'],
+        landingUrl: '/cluster-world-seisaku.html',
       },
       {
         id: 'support',
@@ -459,57 +463,79 @@ export default function ServicesSection() {
                       </div>
                     </div>
 
-                    <button
-                      onClick={() => {
-                        // GA4イベント送信（スクロール前に実行）
-                        if (typeof window !== 'undefined' && window.gtag && selectedService) {
-                          window.gtag('event', 'click_document_request', {
-                            event_category: 'engagement',
-                            event_label: `service_modal_${selectedService.id}`,
-                            content_type: 'service_cta',
-                            service_id: selectedService.id
-                          })
-                        }
-
-                        // モーダルを閉じる
-                        closeModal()
-
-                        // モーダル閉鎖アニメーション完了後にスクロール実行
-                        setTimeout(() => {
-                          const targetUrl = `#contact?service=${selectedService.id}&type=document`
-                          const [hash, queryString] = targetUrl.includes('?') ? targetUrl.split('?') : [targetUrl, '']
-
-                          // ハッシュ部分のみでスクロール
-                          const element = document.querySelector(hash)
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-
-                            // スクロール完了後に完全なハッシュを設定（パラメータ込み）
-                            setTimeout(() => {
-                              window.location.hash = queryString ? `${hash}?${queryString}` : hash
-                            }, 500)
+                    <div className="flex items-center gap-3">
+                      {selectedService.landingUrl && (
+                        <a
+                          href={selectedService.landingUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => {
+                            if (typeof window !== 'undefined' && window.gtag && selectedService) {
+                              window.gtag('event', 'click_landing_page', {
+                                event_category: 'engagement',
+                                event_label: `service_modal_${selectedService.id}`,
+                                content_type: 'service_landing_link',
+                                service_id: selectedService.id
+                              })
+                            }
+                          }}
+                          className="px-6 py-3 rounded-xl font-bold text-gray-300 border border-white/20 hover:border-cyan-400/50 hover:text-cyan-400 bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-sm font-['HackGen35']"
+                        >
+                          詳細を見る
+                        </a>
+                      )}
+                      <button
+                        onClick={() => {
+                          // GA4イベント送信（スクロール前に実行）
+                          if (typeof window !== 'undefined' && window.gtag && selectedService) {
+                            window.gtag('event', 'click_document_request', {
+                              event_category: 'engagement',
+                              event_label: `service_modal_${selectedService.id}`,
+                              content_type: 'service_cta',
+                              service_id: selectedService.id
+                            })
                           }
-                        }, 300) // closeModalのsetTimeoutと同じ300ms待機
-                      }}
-                      className="relative group px-8 py-3 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105"
-                    >
-                      {/* Button Glass Background */}
-                      <span
-                        className="absolute inset-0 rounded-xl transition-all duration-300"
-                        style={{
-                          background: `linear-gradient(135deg, ${selectedService.color}, rgba(6,182,212,0.8))`,
-                          boxShadow: `0 0 20px ${selectedService.color}40`
+
+                          // モーダルを閉じる
+                          closeModal()
+
+                          // モーダル閉鎖アニメーション完了後にスクロール実行
+                          setTimeout(() => {
+                            const targetUrl = `#contact?service=${selectedService.id}&type=document`
+                            const [hash, queryString] = targetUrl.includes('?') ? targetUrl.split('?') : [targetUrl, '']
+
+                            // ハッシュ部分のみでスクロール
+                            const element = document.querySelector(hash)
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+                              // スクロール完了後に完全なハッシュを設定（パラメータ込み）
+                              setTimeout(() => {
+                                window.location.hash = queryString ? `${hash}?${queryString}` : hash
+                              }, 500)
+                            }
+                          }, 300) // closeModalのsetTimeoutと同じ300ms待機
                         }}
-                      />
-                      {/* Button Hover Glow */}
-                      <span
-                        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ boxShadow: `0 0 30px ${selectedService.color}60` }}
-                      />
-                      <span className="relative z-10 font-['HackGen35']">
-                        資料請求
-                      </span>
-                    </button>
+                        className="relative group px-8 py-3 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105"
+                      >
+                        {/* Button Glass Background */}
+                        <span
+                          className="absolute inset-0 rounded-xl transition-all duration-300"
+                          style={{
+                            background: `linear-gradient(135deg, ${selectedService.color}, rgba(6,182,212,0.8))`,
+                            boxShadow: `0 0 20px ${selectedService.color}40`
+                          }}
+                        />
+                        {/* Button Hover Glow */}
+                        <span
+                          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          style={{ boxShadow: `0 0 30px ${selectedService.color}60` }}
+                        />
+                        <span className="relative z-10 font-['HackGen35']">
+                          資料請求
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
